@@ -2,10 +2,18 @@
 // Scaffolding
 // --------------------------------------------------
 
+
+// body
+// --------------------------------------------------
+
 body {
   background-image: url(http://blog-imgs-56.fc2.com/f/c/2/fc2ist/poto-bg.gif);
   background-repeat: repeat-x;
 }
+
+
+// Header
+// --------------------------------------------------
 
 #header {
   margin-top: 30px;
@@ -140,12 +148,19 @@ body {
     position: absolute;
     top: -72px;
     right: 0;
-    background: url(http://blog-imgs-56-origin.fc2.com/f/c/2/fc2ist/poto-twitter.png) no-repeat 0 0;
-    width: 183px;
-    height: 143px;
-    .hide-text();
+    a {
+      display: block;
+      width: 183px;
+      height: 143px;
+      .hide-text();
+      background: url(http://blog-imgs-56-origin.fc2.com/f/c/2/fc2ist/poto-twitter.png) no-repeat 0 0;
+    }
   }
 }
+
+
+// Article
+// --------------------------------------------------
 
 #articles {
   margin-bottom: 20px;
@@ -305,6 +320,10 @@ body {
   }
 }
 
+
+// Sidebar
+// --------------------------------------------------
+
 #sidebar {
 
   .plugin {
@@ -350,6 +369,10 @@ body {
   }
 
 }
+
+
+// Comment & Trackback
+// --------------------------------------------------
 
 #cm, #tb {
   margin-top: 80px;
@@ -495,6 +518,10 @@ body {
   }
 }
 
+
+// Footer
+// --------------------------------------------------
+
 #footer {
   padding: 2px 0 0;
   background: #d9b89d url(http://blog-imgs-56.fc2.com/f/c/2/fc2ist/poto-footer-bg.png);
@@ -562,9 +589,17 @@ body {
 
 }
 
+
+// Pager
+// --------------------------------------------------
+
 #pager ol {
   margin: 0;
 }
+
+
+// Tape
+// --------------------------------------------------
 
 .tape {
   padding: 0;
@@ -589,6 +624,10 @@ body {
     z-index: 2;
   }
 }
+
+
+// Submit Button
+// --------------------------------------------------
 
 input[type=submit] {
   .btn();
