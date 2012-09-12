@@ -1,0 +1,41 @@
+#articles .post > .body > aside > .continue {
+  width: auto;
+  height: auto;
+}
+
+#articles .post > .body > aside > .continue a {
+  width: auto;
+  height: auto;
+  background: none;
+  font-family: 'Delius Swash Caps';
+  line-height: 1;
+  color: transparent;
+  background-color: transparent;
+  margin-top: 0;
+  
+  font-size: 1.6em; /* 「続きを読む」の文字サイズ */
+}
+
+#articles .post > .body > aside > .continue a:hover {
+  margin-top: 0;
+}
+
+#articles > .post > footer ul.reaction {
+  font-family: 'Delius Swash Caps';
+}
+
+a {
+  color: #FF60AD; /* 通常のリンクの色 */
+}
+
+a:hover {
+  color: #55c3b6;; /* マウスを乗せたときのリンクの色 */
+}
+
+#sidebar a {
+  color: #ff0364; /* サイドバーのリンクの色 */
+}
+
+#sidebar a:hover {
+  color: #dd0042; /* サイドバーのマウスを乗せたときのリンクの色 */
+}

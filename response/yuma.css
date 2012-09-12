@@ -1,0 +1,994 @@
+/*=================================
+ *
+ * POTO - v1.0.2
+ * Copyright (c) 2012 FC2.BLOG.HACK();
+ * Licensed under the MIT License
+ *
+ * Author: moi <twitter: @moi_fc2>
+ * http://fc2ist.blog.fc2.com/
+ *
+ * date: 2012-09-12
+ *
+ *=================================*/
+
+/*------------------------
+ * Font
+ *------------------------*/
+body {
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
+@font-face {
+  font-family: 'Delius Swash Caps';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Delius Swash Caps'), local('DeliusSwashCaps-Regular'), url(http://themes.googleusercontent.com/static/fonts/deliusswashcaps/v5/uXyrEUnoWApxIOICunRq70dtE_hqo9Jbz3iVRUjskWg.woff) format('woff');
+}
+@font-face {
+  font-family: 'Life Savers';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Life Savers'), local('LifeSavers'), url(http://themes.googleusercontent.com/static/fonts/lifesavers/v2/_yRJoxB8KMO25_gswqItc7rIa-7acMAeDBVuclsi6Gc.woff) format('woff');
+}
+/*------------------------
+ * Layout
+ *------------------------*/
+html {
+  *overflow-x: hidden;
+}
+body {
+  margin: 0;
+  padding: 20px 0;
+  text-align: center;
+}
+#wrapper {
+  width: 960px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  *zoom: 1;
+  text-align: left;
+  *overflow: hidden;
+}
+#wrapper:before,
+#wrapper:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+#wrapper:after {
+  clear: both;
+}
+html*#wrapper {
+  overflow: hidden;
+}
+#content {
+  margin-top: 30px;
+}
+#main {
+  float: left;
+  width: 610px;
+  margin-bottom: 50px;
+}
+#sidebar {
+  float: left;
+  width: 300px;
+  margin-left: 50px;
+  margin-bottom: 50px;
+}
+#footer {
+  padding: 50px 0 0;
+  text-align: center;
+  zoom: 1;
+}
+#footer .wrapper {
+  width: 960px;
+  margin: 0 auto;
+  text-align: left;
+}
+/*------------------------
+ * Frame
+ *------------------------*/
+#header h1 {
+  margin: 0 0 8px;
+  font-size: 1.4em;
+  line-height: 1;
+}
+#header h2 {
+  margin: 0 0 18px;
+  font-weight: normal;
+  font-size: 0.9em;
+  line-height: 1;
+}
+#header .nav .dropdown-menu a {
+  font-size: 0.8em;
+}
+#header .nav .dropdown-menu .badge {
+  margin-left: 5px;
+  padding: 2px 9px;
+  font-size: 0.8em;
+  font-weight: normal;
+  text-shadow: none;
+}
+#articles {
+  margin-bottom: 20px;
+}
+#articles > h1 {
+  margin-bottom: 30px;
+}
+#articles > .post {
+  margin-bottom: 30px;
+}
+#articles > .post > header {
+  margin-bottom: 18px;
+}
+#articles > .post > header h1,
+#articles > .post > header h2 {
+  margin: 0 0 8px;
+  line-height: 1.3;
+  font-size: 1.2em;
+}
+#articles > .post > header ul {
+  margin: 0;
+  *zoom: 1;
+}
+#articles > .post > header ul:before,
+#articles > .post > header ul:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+#articles > .post > header ul:after {
+  clear: both;
+}
+#articles > .post > header ul li {
+  display: block;
+  float: left;
+  margin: 0 5px 0 0;
+  padding: 0 5px 0 0;
+  list-style: none;
+  border-right: 1px solid #eee;
+  font-size: 0.8em;
+}
+#articles > .post > header ul li li {
+  margin: 0 2px 0 0;
+  padding: 0;
+  font-size: 1em;
+  border-right: none;
+}
+#articles > .post > header ul li li:after {
+  content: ', ';
+}
+#articles > .post > header ul li li:last-child:after {
+  content: '';
+}
+#articles > .post > header ul li:last-child {
+  border-right: none;
+}
+#articles > .post > footer {
+  margin-top: 18px;
+}
+#articles > .post > footer ul.reaction {
+  margin: 0;
+  overflow: hidden;
+  *zoom: 1;
+  border-top: 1px solid #eee;
+}
+#articles > .post > footer ul.reaction:before,
+#articles > .post > footer ul.reaction:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+#articles > .post > footer ul.reaction:after {
+  clear: both;
+}
+#articles > .post > footer ul.reaction li {
+  display: block;
+  float: left;
+  padding: 0.5em 1em 0.3em;
+  list-style: none;
+  border-right: 1px solid #eee;
+  font-size: 0.8em;
+}
+#articles > .post > footer ul.reaction li:last-child {
+  border-right: none;
+  float: right;
+}
+#articles > .post > footer ul.reaction a[data-num]:after {
+  content: '(' attr(data-num) ')';
+  color: #ccc;
+  margin-left: 4px;
+}
+#articles > .post > .body > .continue {
+  margin-bottom: 10px;
+  text-align: right;
+}
+#articles > .post > .body > .continue a {
+  display: inline-block;
+  text-align: center;
+}
+#articles > .post .fc2_footer img {
+  background: transparent;
+}
+#articles > .post .fc2_footer .fc2_socialbtn {
+  margin-top: 5px;
+}
+#articles > .post .fc2_footer .fc2_socialbtn td {
+  padding-right: 5px;
+}
+#articles > .post .relate_dl {
+  margin-top: 10px;
+  padding: 10px;
+  border: 3px solid #eee;
+}
+#articles > .post .relate_dl dt {
+  font-weight: bold;
+  font-size: 1em;
+  margin-bottom: 5px;
+}
+#articles > .post .relate_dl li {
+  list-style-position: outside;
+  line-height: 1.3;
+  margin-left: 20px;
+  padding: 0.4em 0;
+  font-size: 0.9em;
+}
+#sidebar .plugin {
+  margin-bottom: 30px;
+}
+#sidebar .plugin > h3 {
+  font-size: 1em;
+  line-height: 1;
+  margin-top: 0;
+}
+#sidebar .plugin > div {
+  font-size: 0.9em;
+}
+#cm,
+#tb {
+  margin-top: 80px;
+}
+#cm h2,
+#tb h2 {
+  margin: 1.2em 0;
+  font-size: 1.2em;
+  font-family: 'Delius Swash Caps';
+  line-height: 1;
+}
+#cm .action,
+#tb .action {
+  margin: 40px 0 0;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+#cm .reaction,
+#tb .reaction {
+  margin-bottom: 20px;
+}
+#cm .reaction h2,
+#tb .reaction h2 {
+  margin: 0 0 1.2em -33px;
+  padding-left: 33px;
+  line-height: 26px;
+  background: url(http://blog-imgs-56.fc2.com/f/c/2/fc2ist/poto-reaction-header.gif) no-repeat 0 0;
+  font-size: 1.6em;
+}
+#cm .reaction article,
+#tb .reaction article {
+  margin: 1em 0;
+  padding-bottom: 1em;
+  border-bottom: 1px solid #ddd;
+}
+#cm .reaction article header h3,
+#tb .reaction article header h3 {
+  font-weight: bold;
+  font-size: 1em;
+  line-height: 1;
+  margin: 0;
+  display: inline-block;
+}
+#cm .reaction article header h3 a,
+#tb .reaction article header h3 a {
+  color: #000;
+}
+#cm .reaction article header h3 .title,
+#tb .reaction article header h3 .title {
+  margin-left: 0.5em;
+  color: #000;
+}
+#cm .reaction article header h3 .title:empty,
+#tb .reaction article header h3 .title:empty,
+#cm .reaction article header h3 .title.empty,
+#tb .reaction article header h3 .title.empty {
+  display: none;
+}
+#cm .reaction article header h3 .title:before,
+#tb .reaction article header h3 .title:before {
+  content: '「';
+}
+#cm .reaction article header h3 .title:after,
+#tb .reaction article header h3 .title:after {
+  content: '」';
+}
+#cm .reaction article > .body,
+#tb .reaction article > .body {
+  margin-top: 7px;
+  line-height: 1.5;
+}
+#cm .reaction article:last-child,
+#tb .reaction article:last-child {
+  border-bottom: none;
+}
+#cm .reaction article footer,
+#tb .reaction article footer {
+  font-size: 0.8em;
+  color: #999;
+}
+#cm label {
+  cursor: pointer;
+  margin-left: 10px;
+  font-size: 0.9em;
+}
+#cm textarea,
+#cm input {
+  width: 300px;
+}
+#cm textarea {
+  width: 98%;
+  height: 10em;
+}
+#cm input[type=submit],
+#cm button {
+  width: auto;
+}
+#cm input.delete {
+  margin-left: 2em;
+}
+#cm input[type=password] {
+  width: 100px;
+}
+#cm input[type=checkbox] {
+  width: auto;
+}
+#cm form p {
+  margin-bottom: 0.6em;
+}
+#tb input {
+  padding: 0.8em 0.5em;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  width: 98%;
+  vertical-align: middle;
+  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+  transition: border linear 0.2s, box-shadow linear 0.2s;
+}
+#tb input:focus {
+  border-color: rgba(82, 168, 236, 0.8);
+  outline: 0;
+  outline: thin dotted \9;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+}
+/*------------------------
+ * Plugin
+ *------------------------*/
+.plugin ul,
+.plugin ol {
+  margin-left: 0;
+}
+.plugin ul ul,
+.plugin ol ul,
+.plugin ul ol,
+.plugin ol ol {
+  margin-top: 0.5em;
+  margin-left: -10px;
+}
+.plugin li {
+  list-style: none;
+  padding-left: 17px;
+  line-height: 1;
+  padding-bottom: 0.5em;
+  background: url(http://blog-imgs-56.fc2.com/f/c/2/fc2ist/poto-list-1.png) no-repeat 0 0;
+}
+.plugin li li {
+  background-image: url(http://blog-imgs-56.fc2.com/f/c/2/fc2ist/poto-list-2.png);
+}
+.plugin li li:last-child {
+  margin-bottom: 0.5em;
+}
+.plugin > .entry li,
+.plugin > .comment li,
+.plugin > .trackback li {
+  margin-bottom: 0.5em;
+}
+.plugin > .entry li:last-child,
+.plugin > .comment li:last-child,
+.plugin > .trackback li:last-child {
+  margin-bottom: 0;
+}
+.plugin > .advcategory li,
+.plugin > .archive li,
+.plugin > .rss li,
+.plugin > .link li {
+  padding-bottom: 0.8em;
+}
+.plugin > .profile > div {
+  line-height: 1.7;
+}
+.plugin > .profile p {
+  margin-bottom: 0.6em;
+}
+.plugin > .profile strong,
+.plugin > .profile b {
+  font-weight: bold;
+}
+.plugin > .profile em {
+  font-style: italic;
+}
+.plugin > .profile s,
+.plugin > .profile strike {
+  text-decoration: line-through;
+}
+.plugin > .profile u {
+  text-decoration: underline;
+}
+.plugin > .profile .plugin-myimage {
+  margin: 1em 0 0.6em;
+  text-align: center;
+}
+.plugin table.calender {
+  margin: 0;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 1px;
+  font-size: 0.8em;
+}
+.plugin table.calender caption {
+  padding: 0.5em 0;
+}
+.plugin table.calender th {
+  color: #000;
+}
+.plugin table.calender td,
+.plugin table.calender th {
+  line-height: 2;
+  width: 14.2%;
+  text-align: center;
+}
+.plugin table.calender td {
+  color: #888;
+}
+.plugin table.calender td:first-child,
+.plugin table.calender td:last-child {
+  background-color: #e7e0d9;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.plugin table.calender td a {
+  color: #000;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.plugin .formmail input,
+.plugin .formmail textarea {
+  margin-bottom: 10px;
+}
+.plugin .plugin-tag a {
+  word-wrap: break-word;
+}
+/*------------------------
+ * .post
+ *------------------------*/
+#articles > .post > .body {
+  padding: 1px 0;
+  line-height: 1.7;
+}
+#articles > .post > .body h2 {
+  margin: 1.2em 0 1.2em -45px;
+  padding-left: 45px;
+  line-height: 39px;
+  font-size: 1.5em;
+  background: url(http://blog-imgs-56.fc2.com/f/c/2/fc2ist/poto-h2.gif) no-repeat 0 0;
+  color: #000;
+  zoom: 1;
+}
+#articles > .post > .body h3 {
+  margin: 1.2em 0 1.2em -27px;
+  padding-left: 27px;
+  line-height: 22px;
+  font-size: 1.2em;
+  background: url(http://blog-imgs-56.fc2.com/f/c/2/fc2ist/poto-h3.gif) no-repeat 0 0;
+  color: #288599;
+  zoom: 1;
+}
+#articles > .post > .body h4 {
+  margin: 1.2em 0 1.2em -20px;
+  padding-left: 20px;
+  line-height: 14px;
+  font-size: 1.1em;
+  background: url(http://blog-imgs-56.fc2.com/f/c/2/fc2ist/poto-h4.gif) no-repeat 0 0;
+  color: #99284a;
+  zoom: 1;
+}
+#articles > .post > .body pre,
+#articles > .post > .body xmp,
+#articles > .post > .body code {
+  font-family: "Ricty", "Menlo", "Consolas", monospace;
+}
+#articles > .post > .body pre,
+#articles > .post > .body xmp {
+  padding: 5px;
+  overflow: auto;
+  border: 1px solid #ddd;
+  background-color: #f0f0f0;
+}
+#articles > .post > .body blockquote {
+  padding: 10px;
+  border: 5px solid #ddd;
+  background-color: #f0f0f0;
+}
+#articles > .post > .body a img {
+  -webkit-transition: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+#articles > .post > .body a img:hover {
+  opacity: 0.75;
+}
+#articles > .post > .body a.link-eyecatch {
+  display: inline-block;
+  float: left;
+  margin: 0 20px 10px 0;
+}
+#articles > .post > .body img {
+  max-width: 100%;
+  height: auto;
+  width: auto\9;
+}
+#articles > .post > .body embed,
+#articles > .post > .body iframe,
+#articles > .post > .body object {
+  max-width: 100%;
+}
+.type-permanent .img-eyecatch {
+  display: block;
+  margin: 0 auto 20px;
+}
+.type-permanent .fc2_footer {
+  margin-top: 20px;
+}
+#articles > .post > .body p,
+#articles > .post > .body pre,
+#articles > .post > .body blockquote,
+#articles > .post > .body table {
+  margin: 1.6em 0;
+}
+#articles > .post > .body dd {
+  margin: 0 0 1em 1em;
+}
+#articles > .post > .body > section,
+#articles > .post > .body > #more > section {
+  margin: 80px 0;
+}
+#articles > .post > .body > section > section,
+#articles > .post > .body > #more > section > section {
+  margin: 50px 0 50px 30px;
+}
+#articles > .post > .body > section > section section,
+#articles > .post > .body > #more > section > section section {
+  margin: 1em 0 1em 1em;
+}
+#articles > .post > .body > section:first-child,
+#articles > .post > .body > #more > section:first-child {
+  margin-top: 0;
+}
+#articles > .post > .body .img-eyecatch + p,
+#articles > .post > .body .link-eyecatch + p {
+  margin-top: 0;
+}
+/*------------------------
+ * Skin
+ *------------------------*/
+body {
+  background: #fafaf5 url(http://blog-imgs-56.fc2.com/f/c/2/fc2ist/poto-bg.gif) repeat-x 0 0;
+  padding: 42px 0 0;
+}
+#header {
+  margin-top: 30px;
+  position: relative;
+}
+#header h1 a {
+  font-family: 'Delius Swash Caps', 'Life Savers', "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #ff0072;
+  text-decoration: none;
+}
+#header h2 {
+  width: 800px;
+}
+#header .navbar {
+  width: 620px;
+  margin-left: -5px;
+}
+#header .navbar .navbar-inner {
+  border: none;
+  filter: none;
+  background: transparent url(http://blog-imgs-56.fc2.com/f/c/2/fc2ist/poto-menu-mini.gif) no-repeat 0 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  padding: 6px;
+  height: 38px;
+}
+#header .navbar .nav > li {
+  background: url(http://blog-imgs-56.fc2.com/f/c/2/fc2ist/poto-nav-divider.gif) no-repeat right top;
+  padding-right: 1px;
+}
+#header .navbar .nav > li > a {
+  color: #000;
+  text-shadow: none;
+  font-size: 1.1em;
+  font-family: 'Delius Swash Caps', "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  padding: 0 15px;
+  line-height: 38px;
+}
+#header .navbar .nav .active > a,
+#header .navbar .nav .active > a:hover,
+#header .navbar .nav .active > a:focus {
+  color: #637;
+  background-color: #e7d4eb;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+#header .navbar .nav li.dropdown.open > .dropdown-toggle,
+#header .navbar .nav li.dropdown.active > .dropdown-toggle,
+#header .navbar .nav li.dropdown.open.active > .dropdown-toggle {
+  color: #335a77;
+  background-color: #d4e5eb;
+}
+#header .navbar .nav li.dropdown > .dropdown-toggle .caret {
+  border-top-color: #000;
+  border-bottom-color: #000;
+  margin-top: 17px;
+}
+#header .navbar .nav li.dropdown.open > .dropdown-toggle .caret,
+#header .navbar .nav li.dropdown.active > .dropdown-toggle .caret,
+#header .navbar .nav li.dropdown.open.active > .dropdown-toggle .caret {
+  border-top-color: #335a77;
+  border-bottom-color: #335a77;
+}
+#header .navbar .dropdown-menu {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+#header .navbar .dropdown-menu a {
+  position: relative;
+  padding-right: 80px;
+  min-height: 1.5em;
+}
+#header .navbar .dropdown-submenu > a::after {
+  position: absolute;
+  float: none;
+  top: 50%;
+  right: 10px;
+  margin: -5px 0 0;
+}
+#header .navbar .nav .dropdown-menu .badge {
+  position: absolute;
+  right: 20px;
+  background-color: #d8d8d3;
+  color: #61615c;
+}
+#header .navbar .nav .dropdown-menu a:hover .badge {
+  background-color: #6e7f85;
+  color: #fff;
+}
+#header .twitter {
+  position: absolute;
+  top: -72px;
+  right: 0;
+}
+#header .twitter a {
+  margin-top: -5px;
+  display: block;
+  width: 183px;
+  height: 143px;
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+  background: url(http://blog-imgs-56.fc2.com/f/c/2/fc2ist/poto-ribon-muji.png) no-repeat 0 0;
+}
+#header .twitter a:hover {
+  margin-top: 0;
+}
+#sidebar .plugin {
+  padding: 25px 20px;
+  position: relative;
+  background: url(http://blog-imgs-56.fc2.com/f/c/2/fc2ist/poto-plugin-body.png) repeat-y 0 0;
+}
+#sidebar .plugin::before,
+#sidebar .plugin::after {
+  content: '';
+  display: block;
+  width: 300px;
+  height: 5px;
+  position: absolute;
+  left: 0;
+  background: url(http://blog-imgs-56.fc2.com/f/c/2/fc2ist/poto-plugin-bar.png) no-repeat 0 0;
+}
+#sidebar .plugin::before {
+  top: 0;
+}
+#sidebar .plugin::after {
+  bottom: 0;
+}
+#sidebar .plugin > h3 {
+  background: url(http://blog-imgs-56.fc2.com/f/c/2/fc2ist/poto-plugin-header.png) no-repeat 0 0;
+  padding-left: 20px;
+  font-family: 'Delius Swash Caps', "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  margin-bottom: 1em;
+}
+#sidebar a {
+  color: #ff0364;
+}
+#sidebar a:hover {
+  color: #dd0042;
+}
+#articles .post > .body > aside {
+  *zoom: 1;
+}
+#articles .post > .body > aside:before,
+#articles .post > .body > aside:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+#articles .post > .body > aside:after {
+  clear: both;
+}
+#articles .post > .body > aside > .fc2_footer {
+  float: left;
+}
+#articles .post > .body > aside > .continue {
+  float: right;
+  width: 168px;
+  height: 63px;
+}
+#articles .post > .body > aside > .continue a {
+  display: block;
+  margin-top: 3px;
+  width: 100%;
+  height: 60px;
+  background: url(http://blog-imgs-56.fc2.com/f/c/2/fc2ist/poto-readmore.png) no-repeat 0 0;
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+#articles .post > .body > aside > .continue a:hover {
+  margin-top: 0;
+  background-position: 0 -60px;
+}
+#articles .post > footer {
+  clear: both;
+}
+#cm h2,
+#tb h2 {
+  margin-top: 0;
+  line-height: 1;
+}
+#cm .action,
+#tb .action {
+  background: #f6f4f3 url(http://blog-imgs-56.fc2.com/f/c/2/fc2ist/poto-form-stripe.png);
+  padding: 10px;
+}
+#cm .action h2,
+#tb .action h2 {
+  padding: 0;
+  border-bottom: none;
+}
+#cm .action > .wrapper,
+#tb .action > .wrapper {
+  background-color: #f6f4f3;
+  overflow: hidden;
+  padding: 20px 20px 10px;
+}
+#cm .action > .wrapper {
+  background: #f6f4f3 url(http://blog-imgs-56.fc2.com/f/c/2/fc2ist/poto-form-stamp.png) no-repeat 95% 98%;
+}
+#footer {
+  padding: 2px 0 0;
+  background: #d9b89d url(http://blog-imgs-56.fc2.com/f/c/2/fc2ist/poto-footer-bg.png);
+}
+#footer a {
+  color: #ff0364;
+}
+#footer a:hover {
+  color: #dd0042;
+}
+#footer::before {
+  content: '';
+  display: block;
+  height: 2px;
+  margin-top: -2px;
+  width: 100%;
+  background: url(http://blog-imgs-56.fc2.com/f/c/2/fc2ist/poto-footer-edge.png) repeat-x 0 0;
+}
+#footer > .wrapper {
+  padding: 60px 0 20px;
+  position: relative;
+  background: #d9b89d url(http://blog-imgs-56.fc2.com/f/c/2/fc2ist/poto-footer-bg.png);
+}
+#footer > .wrapper > .pagetop {
+  position: absolute;
+  top: -33px;
+  right: 0;
+  width: 175px;
+}
+#footer > .wrapper > .pagetop a {
+  width: 100%;
+  height: 90px;
+  display: block;
+  background: url(http://blog-imgs-56.fc2.com/f/c/2/fc2ist/poto-pagetop.png) no-repeat 0 0;
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+#footer .plugin > h3 {
+  background: url(http://blog-imgs-56.fc2.com/f/c/2/fc2ist/poto-plugin-header.png) no-repeat 0 0;
+  padding-left: 20px;
+  font-family: 'Delius Swash Caps', "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  font-size: 1em;
+  line-height: 1;
+  margin: 0 0 10px;
+}
+#footer #copyright {
+  margin-top: 10px;
+  line-height: 1;
+  font-size: 0.8em;
+  text-align: right;
+}
+#footer #copyright p {
+  margin: 0 0 0.5em;
+}
+#pager ol {
+  margin: 0;
+}
+.tape {
+  padding: 0;
+  border: none;
+}
+.img-tape {
+  display: inline-block;
+  position: relative;
+  padding: 13px 0 0;
+}
+.img-tape::before {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 26px;
+  background: url(http://blog-imgs-56.fc2.com/f/c/2/fc2ist/poto-tape.png) no-repeat 0 0;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -50px;
+  z-index: 2;
+}
+input[type=submit] {
+  display: inline-block;
+  *display: inline;
+  /* IE7 inline-block hack */
+
+  *zoom: 1;
+  padding: 4px 14px;
+  margin-bottom: 0;
+  font-size: 13px;
+  line-height: 20px;
+  *line-height: 20px;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  color: #333333;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+  background-color: #f5f5f5;
+  background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+  background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
+  border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #e6e6e6;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+  border: 1px solid #bbbbbb;
+  *border: 0;
+  border-bottom-color: #a2a2a2;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  *margin-left: .3em;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+input[type=submit]:hover,
+input[type=submit]:active,
+input[type=submit].active,
+input[type=submit].disabled,
+input[type=submit][disabled] {
+  color: #333333;
+  background-color: #e6e6e6;
+  *background-color: #d9d9d9;
+}
+input[type=submit]:active,
+input[type=submit].active {
+  background-color: #cccccc \9;
+}
+input[type=submit]:first-child {
+  *margin-left: 0;
+}
+input[type=submit]:hover {
+  color: #333333;
+  text-decoration: none;
+  background-color: #e6e6e6;
+  *background-color: #d9d9d9;
+  /* Buttons in IE7 don't get borders, so darken on hover */
+
+  background-position: 0 -15px;
+  -webkit-transition: background-position 0.1s linear;
+  -moz-transition: background-position 0.1s linear;
+  -o-transition: background-position 0.1s linear;
+  transition: background-position 0.1s linear;
+}
+input[type=submit]:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+input[type=submit].active,
+input[type=submit]:active {
+  background-color: #e6e6e6;
+  background-color: #d9d9d9 \9;
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+input[type=submit].disabled,
+input[type=submit][disabled] {
+  cursor: default;
+  background-color: #e6e6e6;
+  background-image: none;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+/* ページ上部のストライプ画像の差し替え
+============================*/
+
+body {
+  background-image: url(画像のURL);
+}

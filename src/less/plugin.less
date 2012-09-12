@@ -1,0 +1,103 @@
+//
+// Plugin
+// --------------------------------------------------
+
+.plugin {
+
+  ul, ol {
+    margin-left: 0;
+    ul, ol {
+      margin-top: 0.5em;
+      margin-left: -10px;
+    }
+  }
+
+  li {
+    list-style: none;
+    padding-left: 17px;
+    line-height: 1;
+    padding-bottom: 0.5em;
+    background: url(http://blog-imgs-56.fc2.com/f/c/2/fc2ist/poto-list-1.png) no-repeat 0 0;
+
+    li {
+      background-image: url(http://blog-imgs-56.fc2.com/f/c/2/fc2ist/poto-list-2.png);
+      &:last-child {
+        margin-bottom: 0.5em;
+      }
+    }
+  }
+
+  > .entry, > .comment, > .trackback {
+    li {
+      margin-bottom: 0.5em;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  > .advcategory, > .archive, > .rss, > .link {
+    li {
+      padding-bottom: 0.8em;
+    }
+  }
+
+  > .profile {
+
+    > div { line-height: 1.7 }
+    p { margin-bottom: 0.6em }
+    strong, b { font-weight: bold }
+    em { font-style: italic }
+    s, strike { text-decoration: line-through }
+    u { text-decoration: underline }
+    .plugin-myimage {
+      margin: 1em 0 0.6em;
+      text-align: center;
+    }
+  }
+
+  table.calender {
+    margin: 0;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 1px;
+    font-size: 0.8em;
+    caption {
+      padding: 0.5em 0;
+    }
+    th {
+      color: #000;
+    }
+    td, th {
+      line-height: 2;
+      width: 14.2%;
+      text-align: center;
+    }
+    td {
+      color: #888;
+    }
+    td:first-child, td:last-child {
+      background-color: #f8f1ea - #111;
+      background-color: rgba(0,0,0,.05);
+    }
+    td a {
+      color: #000;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+  }
+
+  .formmail {
+    input, textarea {
+      margin-bottom: 10px;
+    }
+  }
+
+  .plugin-tag {
+    a {
+      word-wrap: break-word;
+    }
+  }
+
+}

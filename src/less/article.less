@@ -1,0 +1,119 @@
+//
+// Article
+// --------------------------------------------------
+
+#articles > .post > .body {
+  padding: 1px 0;
+  line-height: 1.7;
+
+  h2 {
+    margin: 1.2em 0 1.2em -45px;
+    padding-left: 45px;
+    line-height: 39px;
+    font-size: 1.5em;
+    background: url(http://blog-imgs-56.fc2.com/f/c/2/fc2ist/poto-h2.gif) no-repeat 0 0;
+    color: #000;
+    zoom: 1;
+  }
+
+  h3 {
+    margin: 1.2em 0 1.2em -27px;
+    padding-left: 27px;
+    line-height: 22px;
+    font-size: 1.2em;
+    background: url(http://blog-imgs-56.fc2.com/f/c/2/fc2ist/poto-h3.gif) no-repeat 0 0;
+    color: #288599;
+    zoom: 1;
+  }
+
+  h4 {
+    margin: 1.2em 0 1.2em -20px;
+    padding-left: 20px;
+    line-height: 14px;
+    font-size: 1.1em;
+    background: url(http://blog-imgs-56.fc2.com/f/c/2/fc2ist/poto-h4.gif) no-repeat 0 0;
+    color: #99284a;
+    zoom: 1;
+  }
+
+  pre, xmp, code {
+    font-family: "Ricty", "Menlo", "Consolas", monospace;
+  }
+
+  pre, xmp {
+    padding: 5px;
+    overflow: auto;
+    border: 1px solid #ddd;
+    background-color: #f0f0f0;
+  }
+
+  blockquote {
+    padding: 10px;
+    border: 5px solid #ddd;
+    background-color: #f0f0f0;
+  }
+
+  a img {
+    .transition(opacity .2s);
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+
+  a.link-eyecatch {
+    display: inline-block;
+    float: left;
+    margin: 0 20px 10px 0;
+  }
+
+  img {
+    max-width:100%;
+    height: auto;
+    width: auto\9;
+  }
+
+  embed, iframe, object {
+    max-width: 100%;
+  }
+
+  p, pre, blockquote, table {
+  margin: 1.6em 0;
+  }
+  dd {
+    margin: 0 0 1em 1em;
+  }
+
+  > section,
+  > #more > section {
+    margin: 80px 0;
+
+    > section {
+      margin: 50px 0 50px 30px;
+
+      section {
+        margin: 1em 0 1em 1em;
+      }
+    }
+  }
+
+  > section:first-child,
+  > #more > section:first-child {
+  margin-top: 0;
+  }
+
+  .img-eyecatch + p,
+  .link-eyecatch + p {
+    margin-top: 0;
+  }
+}
+
+.type-permanent {
+  .img-eyecatch {
+    display: block;
+    margin: 0 auto 20px;
+  }
+
+  .fc2_footer {
+    margin-top: 20px;
+  }
+}

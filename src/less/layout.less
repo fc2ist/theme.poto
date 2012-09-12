@@ -1,0 +1,59 @@
+//
+// Layout
+// --------------------------------------------------
+
+
+// Scaffolding
+// --------------------------------------------------
+
+@content-width: 960px;
+@sidebar-width: 300px;
+
+html {
+  *overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 42px 0 0;
+  text-align: center;
+}
+
+#wrapper {
+  width: @content-width;
+  .center-block();
+  .clearfix();
+  text-align: left;
+  *overflow: hidden;
+}
+
+html*#wrapper { overflow: hidden }
+
+#content {
+  margin-top: 30px;
+}
+
+#main {
+  float: left;
+  width: @content-width - @sidebar-width - 50px;
+  margin-bottom: 50px;
+}
+
+#sidebar {
+  float: left;
+  width: @sidebar-width;
+  margin-left: 50px;
+  margin-bottom: 50px;
+}
+
+#footer {
+  padding: 50px 0 0;
+  text-align: center;
+  zoom: 1;
+
+  .wrapper {
+    width: @content-width;
+    margin: 0 auto;
+    text-align: left;
+  }
+}

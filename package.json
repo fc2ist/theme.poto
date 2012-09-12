@@ -1,0 +1,14 @@
+{
+  "name": "theme-poto",
+  "version": "1.0.0",
+  "description": "ナチュラル系の可愛いデザインのFC2ブログ用の共有テンプレートです。",
+  "author": {
+    "name": "moi",
+    "twitter": "@moi_fc2"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ]
+}

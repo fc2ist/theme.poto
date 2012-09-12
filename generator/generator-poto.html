@@ -1,0 +1,933 @@
+<!-- v0.1.1 -->
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>カスタマイズ [poto]</title>
+	<link rel="stylesheet" type="text/css" charset="UTF-8" href="../css/theme.min.css" />
+	<!--[if lt IE 9]><script type="text/javascript" charset="utf-8" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script type="text/javascript" charset="utf-8" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="http://blog-imgs-56-origin.fc2.com/f/c/2/fc2ist/bootstrap.js"></script>
+	<script type="text/javascript" charset="utf-8" src="http://blog-imgs-56.fc2.com/f/c/2/fc2ist/bootstrap-colorpicker.js"></script>
+  <script type="text/javascript" charset="utf-8" src="http://blog-imgs-56.fc2.com/f/c/2/fc2ist/jquery_cookie.js"></script>
+	<script type="text/javascript" charset="utf-8" src="generator-poto.js"></script>
+
+	<style type="text/css">
+	.container {
+	 width: 940px;
+	}
+	header {
+	 margin-bottom: 48px;
+	 padding: 48px 0;
+	 border-bottom: 1px solid #eee;
+	}
+	footer {
+    margin: 80px 0 20px;
+    padding-top: 16px;
+    text-align: right;
+    border-top: 1px solid #eee;
+    font-size: 0.9em;
+	}
+	h1 {
+	 margin: 0;
+	 color: #333;
+	}
+	.description {
+	 margin: 16px 0 0;
+	 color: #999;
+	}
+	fieldset {
+	 margin-bottom: 48px;
+	}
+  textarea {
+    width: 95%;
+  }
+  .output .btn {
+    padding: 19px 24px;
+    font-size: 30px;
+    line-height: 1;
+  }
+	</style>
+
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <h1>カスタマイズ</h1>
+      <p class="description">
+        変更したい項目を埋めて生成ボタンを押すと<strong>HTML</strong>と<strong>スタイルシート</strong>が生成されるので、<br />
+        テンプレート設定の各項目にコピペで貼り付ければカスタマイズ完了です。
+      </p>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <fieldset>
+      <legend>SNSの設定</legend>
+      <div class="row">
+        <div class="control-group span4">
+          <label for="input-sns[twitter]" class="control-label">Twitter :</label>
+          <div class="controls"><input type="text" id="input-sns[twitter]" value="" placeholder="Twitter" /></div>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>HTMLの設定</legend>
+      <div class="row">
+        <div class="control-group span6">
+          <label for="input-html[post_top]" class="control-label">本文の上 :</label>
+          <div class="controls">
+            <p><textarea id="input-html[post_top]" rows="5" placeholder="本文の上に表示したい内容"></textarea></p>
+            <label for="input-html[post_top_check]">
+              <input id="input-html[post_top_check]" type="checkbox" value="1" /> 記事ページだけで表示する
+            </label>
+          </div>
+        </div>
+        <div class="control-group span6">
+          <label for="input-html[post_bottom]" class="control-label">本文の下 :</label>
+          <div class="controls">
+            <p><textarea id="input-html[post_bottom]" rows="5" placeholder="本文の下に表示したい内容"></textarea></p>
+            <label for="input-html[post_bottom_check]">
+              <input id="input-html[post_bottom_check]" type="checkbox" value="1" /> 記事ページだけで表示する
+            </label>
+          </div>
+        </div>
+        <div class="control-group span6">
+          <label for="input-html[post_middle]" class="control-label">追記の上 :</label>
+          <div class="controls">
+            <textarea id="input-html[post_middle]" rows="5" placeholder="追記の上に表示したい内容"></textarea>
+          </div>
+        </div>
+        <div class="control-group span6">
+          <label for="input-html[head_bottom]" class="control-label">&lt;/head&gt;の上 :</label>
+          <div class="controls"><textarea id="input-html[head_bottom]" rows="5" placeholder="&lt;/head&gt;の上"></textarea></div>
+        </div>
+        <div class="control-group span6">
+          <label for="input-html[body_top]" class="control-label">&lt;body&gt;の下 :</label>
+          <div class="controls"><textarea id="input-html[body_top]" rows="5" placeholder="&lt;body&gt;の下"></textarea></div>
+        </div>
+        <div class="control-group span6">
+          <label for="input-html[body_bottom]" class="control-label">&lt;/body&gt;の上 :</label>
+          <div class="controls"><textarea id="input-html[body_bottom]" rows="5" placeholder="&lt;/body&gt;の上"></textarea></div>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>スタイルシートの設定</legend>
+      <div class="row">
+        <div class="control-group span4">
+          <label for="input-css[color]" class="control-label">文字の色 :</label>
+          <div class="controls">
+            <div class="input-append color" rel="colorpicker" data-color="#555555">
+              <input type="text" id="input-css[color]" value="" placeholder="#555555" />
+              <span class="add-on"><i style="background-color: #555555"></i></span>
+            </div>
+          </div>
+        </div>
+        <div class="control-group span4">
+          <label for="input-css[linkColor]" class="control-label">リンクの色 :</label>
+          <div class="controls">
+            <div class="input-append color" rel="colorpicker" data-color="#f89406">
+              <input type="text" id="input-css[linkColor]" value="" placeholder="#f89406" />
+              <span class="add-on"><i style="background-color: #f89406"></i></span>
+            </div>
+          </div>
+        </div>
+        <div class="control-group span4">
+          <label for="input-css[linkColorHover]" class="control-label">カーソル乗せたときのリンクの色 :</label>
+          <div class="controls">
+            <div class="input-append color" rel="colorpicker" data-color="#555555">
+              <input type="text" id="input-css[linkColorHover]" value="" placeholder="#555555" />
+              <span class="add-on"><i style="background-color: #555555"></i></span>
+            </div>
+          </div>
+        </div>
+        <div class="control-group span4">
+          <label for="input-css[backgroundColor]" class="control-label">背景の色 :</label>
+          <div class="controls">
+            <div class="input-append color" rel="colorpicker" data-color="#ffffff">
+              <input type="text" id="input-css[backgroundColor]" value="" placeholder="#ffffff" />
+              <span class="add-on"><i style="background-color: #ffffff"></i></span>
+            </div>
+          </div>
+        </div>
+        <div class="control-group span4">
+          <label for="input-css[titleImage]" class="control-label">ブログタイトルの画像 :</label>
+          <div class="controls"><input type="text" id="input-css[titleImage]" value="" placeholder="http://" /></div>
+        </div>
+        <div class="control-group span4">
+          <label for="input-css[layout]" class="control-label">レイアウト :</label>
+          <div class="controls">
+            <select id="input-css[layout]">
+              <option value="0">2カラム右サイドバー</option>
+              <option value="left">2カラム左サイドバー</option>
+              <option value="single">1カラム</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>プラグイン</legend>
+      <div class="row">
+        <div class="control-group span6">
+          <div class="controls">
+            <label for="input-plugin[timeline]" class="control-label">
+              <input type="checkbox" id="input-plugin[timeline]" value="1" /> コメントとトラックバックをタイムライン風に表示する
+            </label>
+          </div>
+        </div>
+        <div class="control-group span6">
+          <div class="controls">
+            <label for="input-plugin[carousel]" class="control-label">
+              <input type="checkbox" id="input-plugin[carousel]" value="1" /> トップページにカルーセルを表示する
+            </label>
+          </div>
+        </div>
+
+      </div>
+    </fieldset>
+
+    <fieldset class="output">
+      <legend>生成</legend>
+      <div class="row">
+        <div class="control-group span12" style="margin-bottom:48px">
+          <div class="controls">
+            <a href="#" rel="generate" class="btn btn-block btn-primary" data-loading-text="生成中…">生成</a>
+          </div>
+        </div>
+        <div class="control-group span6 fade">
+          <label for="output[html]" class="control-label">HTML :</label>
+          <div class="controls"><textarea id="output[html]" rows="10"></textarea></div>
+        </div>
+        <div class="control-group span6 fade">
+          <label for="output[css]" class="control-label">スタイルシート :</label>
+          <div class="controls"><textarea id="output[css]" rows="10"></textarea></div>
+        </div>
+      </div>
+    </fieldset>
+
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>
+        &copy; 2012 <a href="http://fc2ist.blog.fc2.com/">FC2.blog.hack;</a> All Rights Reserved.
+      </p>
+    </div>
+  </footer>
+
+<!--
+********************** 以下テンプレート **********************
+-->
+
+<!-- タイムライン -->
+<xmp id="template-plugin-timeline" class="hide">
+	<!--permanent_area-->
+	<link rel="stylesheet" type="text/css" charset="utf-8" href="http://blog-imgs-56-origin.fc2.com/f/c/2/fc2ist/theme-doti-timeline.css" />
+	<script type="text/javascript" charset="utf-8" src="http://blog-imgs-56.fc2.com/f/c/2/fc2ist/jquery_masonry.js"></script>
+	<script type="text/javascript" charset="utf-8" src="http://blog-imgs-56-origin.fc2.com/f/c/2/fc2ist/theme-doti-timeline.js"></script>
+	<!--/permanent_area-->
+</xmp>
+
+
+<!-- SNS -->
+<xmp id="template-sns" class="hide">
+		<nav>
+			<ul>
+				{{loop}}<li><a class="icon-sns icon-white {{:icon}}" href="{{:url}}" title="{{:name}}">{{:name}}</a></li>{{/loop}}
+			</ul>
+		</nav>
+</xmp>
+
+<!-- ブログタイトルの画像 -->
+<xmp id="template-titleImage" class="hide">
+// Title Image
+// --------------------------------------------------
+
+#header h1 a {
+  display: block;
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  border: 0;
+  background: transparent url({{:url}}) no-repeat 0 0;
+  width: {{:width}}px;
+  height: {{:height}}px;
+}
+</xmp>
+
+<!-- 2カラム左サイドバー -->
+<xmp id="template-layout-left" class="hide">
+// Layout
+// --------------------------------------------------
+
+#main {
+  float: right;
+}
+#sidebar {
+  float: left;
+}
+</xmp>
+
+<!-- 1カラム -->
+<xmp id="template-layout-single" class="hide">
+// Layout
+// --------------------------------------------------
+
+.container {
+  width: 740px;
+  padding: 0 10px;
+}
+#main {
+  float: none;
+  width: auto;
+}
+#sidebar {
+  float: none;
+  width: auto;
+  margin-bottom: 0;
+  padding-left: 0;
+  border-left: none;
+  border-bottom: none;
+  *zoom: 1;
+}
+#sidebar > section {
+  width: 45%;
+}
+#sidebar > .first {
+  float: left;
+}
+#sidebar > .second {
+  float: right;
+}
+#sidebar:before,
+#sidebar:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+#sidebar:after {
+  clear: both;
+}
+@media (max-width: 767px) {
+  html {
+    overflow-x: hidden;
+  }
+  .container {
+    width: auto;
+  }
+}
+</xmp>
+
+<!-- スタイルシート -->
+<xmp id="template-css" class="hide">
+/*!
+ *
+ * User Style Sheet
+ *
+ */
+
+
+// Scaffolding
+// --------------------------------------------------
+
+body {
+  color: {{:color}};
+  background-color: {{:backgroundColor}};
+  {{:backgroundImage}}
+}
+a {
+  color: {{:linkColor}};
+}
+a:hover {
+  color: {{:linkColorHover}};
+}
+
+
+// Header
+// --------------------------------------------------
+
+#header {
+  border-top-color: #555555;
+  border-bottom-color: #eeeeee;
+}
+#header h1 a {
+  color: #000000;
+}
+#header h1 a:hover {
+  color: {{:linkColor}};
+}
+#header h2 {
+  color: #999999;
+}
+#header h2::before {
+  background-color: #999999;
+}
+#header nav a {
+  background-color: #555555;
+}
+#header nav a.twitter:hover {
+  background-color: #00aced;
+}
+#header nav a.facebook:hover {
+  background-color: #3c5b97;
+}
+#header nav a.google_plus:hover {
+  background-color: #f5bd34;
+}
+#header nav a.flickr:hover {
+  background-color: #ff0084;
+}
+#header nav a.instagram:hover {
+  background-color: #fc3755;
+}
+#header nav a.youtube:hover {
+  background-color: #ff3333;
+}
+#header nav a.pinterest:hover {
+  background-color: #c9232d;
+}
+#header nav a.github:hover {
+  background-color: #000000;
+}
+
+
+// Main
+// --------------------------------------------------
+
+#main > h1::after {
+  background-color: #222222;
+}
+
+
+// Articles
+// --------------------------------------------------
+
+#articles > .post {
+  border-bottom-color: #eeeeee;
+}
+#articles > .post > header h1,
+#articles > .post > header h2 {
+  color: #333333;
+}
+#articles > .post > header h1 a,
+#articles > .post > header h2 a {
+  color: {{:linkColorHover}};
+}
+#articles > .post > header h1 a:hover,
+#articles > .post > header h2 a:hover {
+  color: {{:linkColor}};
+}
+#articles > .post > header ul {
+  color: #aaa;
+}
+#articles > .post > header ul > li {
+  border-right-color: #eeeeee;
+}
+#articles > .post > footer ul li {
+  border-right-color: #eeeeee;
+}
+#articles > .post .relate_dl {
+  border-color: #eeeeee;
+}
+#articles > .post .relate_dl dt {
+  border-bottom-color: #eeeeee;
+}
+
+
+// Comment & Trackback
+// --------------------------------------------------
+
+#cm .reaction > h2,
+#tb .reaction > h2 {
+  border-color: #999999;
+}
+#cm .reaction article,
+#tb .reaction article {
+  border-bottom-color: #eeeeee;
+}
+#cm .reaction article footer,
+#tb .reaction article footer {
+  color: #999999;
+}
+
+
+// Sidebar
+// --------------------------------------------------
+
+#sidebar a {
+  color: {{:linkColorHover}};
+}
+#sidebar a:hover {
+  color: {{:linkColor}};
+}
+#sidebar .plugin li a::before {
+  background-color: {{:linkColorHover}};
+}
+#sidebar .plugin li a:hover::before {
+  background-color: {{:linkColor}};
+}
+@media (max-width: 480px) {
+  #sidebar .plugin > h3 {
+    border-color: #eeeeee;
+  }
+}
+
+
+// Footer
+// --------------------------------------------------
+
+#footer {
+  border-top-color: #eeeeee;
+}
+#footer a {
+  color: #888888;
+}
+#footer a:hover {
+  color: {{:linkColor}};
+}
+#footer .pagetop a {
+  background-color: #eeeeee;
+  color: #555555;
+}
+#footer .pagetop a:hover {
+  background-color: {{:linkColor}};
+  color: #ffffff;
+}
+
+
+// Timeline
+// --------------------------------------------------
+
+#cm .reaction .timeline::before,
+#tb .reaction .timeline::before {
+  background-color: #eee;
+}
+#cm .reaction .timeline article,
+#tb .reaction .timeline article {
+  background-color: #fff;
+  border-color: #eee;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+#cm .reaction .timeline article::after,
+#tb .reaction .timeline article::after {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAALCAYAAAA9St7UAAABVUlEQVRIS2P8DwTv379nEBISYmQgDFihSriANDMQ/wXib1Cx34S1Y6ig2Lx37979FxQUZGAEeQRkPBGeYRWxdhV1jiut5OITSWRlY+P+/evX12+f3szfu6i7/c3R3a+BxpDiGYrNg3kC5H64Rwh4Bmypb2bbQS99WRUHJUEGES42hjfffjEcuPeeYdvFx3c2T6+yJ8EzFJuH7AkMj+DxDGv4zF19oVZ6OcE64hjpY+2Vlwyrj12asjLdrYjIWCFo3tojl6ctz3QtwGYeuiewegSHZ/gTl5972uWnzQ2KCXQAipmyTVe/zo80kgbKfSQir5BtHjZP4PQIFs8Ipa298nZmkDZON6avu8owK1hHGKjgHREeIcs8XJ4Y3jGCo/RijZy+e0KwjW4WvfIIvjxHMI/gKYIpLmXQkhvF5uEstYZFPUKEJ2ABSnFNjB4zUD7ZLQVYzAAAz8SE74GVNXMAAAAASUVORK5CYII=);
+}
+</xmp>
+
+<xmp id="template-plugin-carousel" class="hide">
+      <!--index_area-->
+      <section id="index-carousel" class="carousel slide fade">
+        <div class="carousel-inner">
+          <!--topentry-->
+          <div class="item" data-target="<%topentry_no>">
+            <a href="<%topentry_link>" rel="bookmark" title="<%topentry_title>"><img class="img-eyecatch" alt="<%topentry_title>" /></a>
+            <div class="carousel-caption">
+              <h4><a href="<%topentry_link>" rel="bookmark"><%topentry_title></a></h4>
+              <p><%topentry_discription></p>
+            </div>
+          </div>
+          <!--/topentry-->
+        </div>
+        <a class="carousel-control left" href="#index-carousel" data-slide="prev">&lsaquo;</a>
+        <a class="carousel-control right" href="#index-carousel" data-slide="next">&rsaquo;</a>
+      </section>
+      <!--/index_area-->
+</xmp>
+
+<!-- HTML -->
+<xmp id="template-html" class="hide">
+<!DOCTYPE html>
+<html lang="<%template_language>">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="content-style-type" content="text/css" />
+	<meta http-equiv="content-script-type" content="text/javascript" />
+	<meta name="viewport" content="width=device-width" />
+
+	<!--not_permanent_area--><meta name="description" content="<%introduction>" /><!--/not_permanent_area-->
+	<!--permanent_area--><meta name="description" content="<%topentry_discription>" /><!--/permanent_area-->
+ 	<meta name="author" content="<%author_name>" />
+
+	<title><%sub_title><!--tag_area--> | <!--/tag_area--><!--search_area--> | <!--/search_area--><!--category_area--> | <!--/category_area--><!--date_area--> | <!--/date_area--><!--permanent_area--> | <!--/permanent_area--><!--titlelist_area-->Archives | <!--/titlelist_area--><!--edit_area--> | <!--/edit_area--><%blog_name></title>
+
+	<link rel="stylesheet" type="text/css" charset="utf-8" href="http://blog-imgs-56-origin.fc2.com/f/c/2/fc2ist/theme-doti.css" />
+	<link rel="stylesheet" type="text/css" charset="utf-8" href="<%css_link>" />
+
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="<%url>?xml" />
+	<link rel="archives" href="/archives.html" title="All Archives" />
+	<!--preventry--><link rel="prev" href="<%preventry_url>" title="<%preventry_title>" /><!--/preventry-->
+	<!--nextentry--><link rel="next" href="<%nextentry_url>" title="<%nextentry_title>" /><!--/nextentry-->
+	<!--prevpage--><link rel="prev" href="<%prevpage_url>" title="Previous Page" /><!--/prevpage-->
+	<!--nextpage--><link rel="next" href="<%nextpage_url>" title="Next Page" /><!--/nextentry-->
+	<!--permanent_area--><link rel="canonical" href="<%url><%topentry_rlink>" /><!--/permanent_area-->
+
+	<!--[if lt IE 9]>
+	<script type="text/javascript" charset="utf-8" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<script type="text/javascript" charset="utf-8" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="http://blog-imgs-56.fc2.com/f/c/2/fc2ist/bootstrap.js"></script>
+	<script type="text/javascript" charset="utf-8" src="http://blog-imgs-56-origin.fc2.com/f/c/2/fc2ist/jquery_fc2_min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="http://blog-imgs-56-origin.fc2.com/f/c/2/fc2ist/theme-doti.js"></script>
+
+	{{:plugin.timeline}}
+
+	{{:head_bottom}}
+</head>
+<body class="type-<!--permanent_area-->permanent<!--/permanent_area--><!--titlelist_area-->titlelist<!--/titlelist_area--><!--date_area-->date<!--/date_area--><!--category_area-->category<!--/category_area--><!--search_area-->search<!--/search_area--><!--tag_area-->tag<!--/tag_area--><!--edit_area-->edit<!--/edit_area-->">
+
+{{:body_top}}
+
+<header id="header">
+	<div class="container">
+		<hgroup>
+			<h1><a href="<%url>"><%blog_name></a></h1>
+			<h2><%introduction></h2>
+		</hgroup>
+		{{:sns}}
+	</div>
+</header><!-- /#header -->
+
+<div id="content">
+	<div class="container">
+		<div id="main">
+
+			<!--date_area-->
+			<h1><%sub_title></h1>
+			<!--/date_area-->
+			<!--category_area-->
+			<h1><%sub_title></h1>
+			<!--/category_area-->
+			<!--search_area-->
+			<h1><%sub_title></h1>
+			<!--/search_area-->
+			<!--tag_area-->
+			<h1><%sub_title></h1>
+			<!--/tag_area-->
+			<!--titlelist_area-->
+			<h1>Archives</h1>
+			<!--/titlelist_area-->
+
+{{:plugin.carousel}}
+
+			<section id="articles">
+			<!--not_titlelist_area-->
+			<!--topentry-->
+			<article class="post" id="e<%topentry_no>">
+				<header>
+					<!--permanent_area--><h1><%topentry_title></h1><!--/permanent_area-->
+					<!--not_permanent_area--><h2><a href="<%topentry_link>" rel="bookmark" title="<%topentry_title>"><%topentry_title></a></h2><!--/not_permanent_area-->
+					<ul class="meta">
+						<li class="date">
+							<time datetime="<%topentry_year>-<%topentry_month>-<%topentry_day>T<%topentry_hour>:<%topentry_minute>:<%topentry_second>+09:00"><%topentry_year>-<%topentry_month>-<%topentry_day></time>
+						</li>
+						<li class="category">
+							<a href="<%topentry_category_link>"><%topentry_category></a>
+						</li>
+						<!--topentry_tag-->
+						<li class="tag">
+							<ul>
+							<!--tag_list-->
+								<li><a href="/?tag=<%topentry_tag_list_parsename>"><%topentry_tag_list_name></a></li>
+							<!--/tag_list-->
+							</ul>
+						</li>
+						<!--/topentry_tag-->
+						<!--community-->
+						<li class="community">
+							<%template_theme>: <a href="<%topentry_thread_link>" title="<%template_genre>:<%topentry_community_janrename>"><%topentry_thread_title></a>
+						</li>
+						<!--/community-->
+					</ul>
+				</header>
+				<div class="body" data-eno="<%topentry_no>" data-title="<%topentry_title>">
+				  {{:post_top}}
+					<%topentry_body>
+					<aside>
+						<!--more_link--><div class="continue"><a href="<%topentry_link>#more" title="<%topentry_title>"><%template_extend></a></div><!--/more_link-->
+					</aside>
+					<!--more-->
+					<div id="more">
+            {{:post_middle}}
+            <%topentry_more>
+					</div>
+					<!--/more-->
+					{{:post_bottom}}
+				</div>
+
+				<!--not_permanent_area-->
+				<footer>
+					<ul class="reaction">
+						<!--allow_comment--><li><a href="<%topentry_link>#cm" rel="tooltip" title="<%topentry_comment_num>"><%template_comment></a></li><!--/allow_comment-->
+						<!--allow_tb--><li><a href="<%topentry_link>#tb" rel="tooltip" title="<%topentry_tb_num>"><%template_trackback></a></li><!--/allow_tb-->
+						<li class="pagetop"><a href="#"><%template_go_top></a></li>
+					</ul>
+				</footer>
+				<!--/not_permanent_area-->
+
+				<!--comment_area-->
+				<aside id="cm">
+					<section class="reaction">
+						 <h2><%template_comment></h2>
+						 <div class="articles">
+							 <!--comment-->
+							 <article id="comment<%comment_no>">
+								 <header>
+									<h3 title="<%comment_name> (<%comment_trip>)"><%comment_url+name><span class="title"><%comment_title></span></h3>
+								 </header>
+								 <div class="body">
+									<%comment_body>
+								 </div>
+								 <footer>
+									<time datetime="<%comment_year>-<%comment_month>-<%comment_day>-<%comment_hour>-<%comment_minute>-<%comment_second>">
+										<%comment_year>.<%comment_month>.<%comment_day> <%comment_hour>:<%comment_minute>
+									</time>
+									<!--comment_edit--><span class="edit"><a href="<%comment_edit_link>" title="<%template_edit_comment>"><%template_edit></a></span><!--/comment_edit-->
+								</footer>
+							 </article>
+							 <!--/comment-->
+						 </div>
+					</section>
+					<fieldset class="action">
+						 <legend><%template_post_comment></legend>
+						 <div class="alert alert-error hide">
+							<button type="button" class="close" data-dismiss="alert">×</button>
+							<strong>Error!</strong> <p><%edit_message></p>
+						 </div>
+						 <form action="./" method="post" class="form-horizontal">
+							<div class="control-group">
+								<label for="cm-name" class="control-label"><%template_name></label>
+								<div class="controls"><input id="cm-name" type="text" class="span5" tabindex="1" name="comment[name]" value="<%cookie_name>" placeholder="<%template_name>" /></div>
+							</div>
+							<div class="control-group">
+								<label for="cm-subject" class="control-label"><%template_title></label>
+								<div class="controls"><input id="cm-subject" type="text" class="span5" tabindex="2" name="comment[title]" value="" placeholder="<%template_title>" /></div>
+							</div>
+							<div class="control-group">
+								<label for="cm-email" class="control-label"><%template_address></label>
+								<div class="controls"><input id="cm-email" type="email" class="span5" tabindex="3" name="comment[mail]" value="<%cookie_mail>" placeholder="<%template_address>" /></div>
+							</div>
+							<div class="control-group">
+								<label for="cm-url" class="control-label">URL</label>
+								<div class="controls"><input id="cm-url" type="url" class="span5" tabindex="4" name="comment[url]" id=""	value="<%cookie_url>" placeholder="http://" /></div>
+							</div>
+							<div class="control-group">
+								<label for="cm-body" class="control-label"><%template_body></label>
+								<div class="controls"><textarea id="cm-body" name="comment[body]" class="span5" tabindex="5" rows="10" placeholder="<%template_body>" required></textarea></div>
+							</div>
+							<div class="control-group">
+								<label for="cm-pw" class="control-label"><%template_password></label>
+								<div class="controls"><input id="cm-pw" type="password" class="span5" tabindex="6" name="comment[pass]" placeholder="<%template_password>" /></div>
+							</div>
+							 <!--accept_secret_comment-->
+							<div class="control-group">
+								<div class="controls">
+									<label for="himitu">
+										<input type="checkbox" id="himitu" name="comment[himitu]" value="1" /> <%template_private_check>
+									</label>
+								</div>
+							</div>
+							<!--/accept_secret_comment-->
+							<div class="form-actions">
+								 <input type="hidden" name="mode" value="regist" />
+								 <input type="hidden" name="comment[no]" value="<%pno>" />
+								 <input type="submit" class="btn btn-primary" tabindex="7" value="<%template_send>" />
+							</div>
+						 </form>
+					</fieldset>
+				</aside>
+				<!--/comment_area-->
+				<!--trackback_area-->
+				<aside id="tb">
+					<section class="reaction">
+						 <h2><%template_trackback></h2>
+						 <div class="articles">
+							 <!--trackback-->
+							 <article id="tb<%tb_no>">
+								 <header>
+									 <h3><a href="<%tb_url>" rel="nofollow"><%tb_title> - <%tb_blog_name></a></h3>
+								 </header>
+								 <div class="body">
+									<%tb_excerpt>
+								 </div>
+								 <footer>
+									<time datetime="<%tb_year>-<%tb_month>-<%tb_day>T<%tb_hour>:<%tb_minute>:<%tb_second>"><%tb_year>.<%tb_month>.<%tb_day> <%tb_hour>:<%tb_minute></time>
+								 </footer>
+							 </article>
+							 <!--/trackback-->
+						 </div>
+					</section>
+					<fieldset class="action">
+						 <legend><%template_trackback>URL</legend>
+						 <p>
+							 <input type="url" value="<%trackback_url>" />
+						 </p>
+					</fieldset>
+				</aside>
+				<!--/trackback_area-->
+
+			</article>
+			<!--/topentry-->
+			<!--/not_titlelist_area-->
+
+			<!--edit_area-->
+			<article class="post">
+				<aside id="cm">
+					<fieldset class="action">
+						 <legend><%template_edit_comment></legend>
+						 <div class="alert alert-error hide">
+							<button type="button" class="close" data-dismiss="alert">×</button>
+							<strong>Error!</strong> <p><%edit_message></p>
+						 </div>
+						 <form action="./" method="post" class="form-horizontal">
+							<div class="control-group">
+								<label for="cm-name" class="control-label"><%template_name></label>
+								<div class="controls"><input id="cm-name" type="text" class="span5" tabindex="1" name="edit[name]" value="<%edit_name>" placeholder="<%template_name>" /></div>
+							</div>
+							<div class="control-group">
+								<label for="cm-subject" class="control-label"><%template_title></label>
+								<div class="controls"><input id="cm-subject" type="text" class="span5" tabindex="2" name="edit[title]" value="<%edit_title>" placeholder="<%template_title>" /></div>
+							</div>
+							<div class="control-group">
+								<label for="cm-email" class="control-label"><%template_address></label>
+								<div class="controls"><input id="cm-email" type="email" class="span5" tabindex="3" name="edit[mail]" value="<%edit_mail>" placeholder="<%template_address>" /></div>
+							</div>
+							<div class="control-group">
+								<label for="cm-url" class="control-label">URL</label>
+								<div class="controls"><input id="cm-url" type="url" class="span5" tabindex="4" name="edit[url]" id=""	 value="<%edit_url>" placeholder="http://" /></div>
+							</div>
+							<div class="control-group">
+								<label for="cm-body" class="control-label"><%template_body></label>
+								<div class="controls"><textarea id="cm-body" name="edit[body]" class="span5" rows="10" tabindex="5" placeholder="<%template_body>" required><%edit_body></textarea></div>
+							</div>
+							<div class="control-group">
+								<label for="cm-pw" class="control-label"><%template_password></label>
+								<div class="controls"><input id="cm-pw" type="password" class="span5" tabindex="6" name="edit[pass]" placeholder="<%template_password>" /></div>
+							</div>
+							 <!--accept_secret_comment-->
+							<div class="control-group">
+								<div class="controls">
+									<label for="himitu">
+										<input type="checkbox" id="himitu" name="edit[himitu]" value="1" /> <%template_private_check>
+									</label>
+								</div>
+							</div>
+							<!--/accept_secret_comment-->
+							<div class="form-actions">
+								<input type="hidden" name="mode" value="edit" />
+								<input type="hidden" name="mode2" value="edited" />
+								<input type="hidden" name="edit[rno]" value="<%eno>" />
+								 <input type="submit" class="btn btn-primary" tabindex="7" value="<%template_send>" />
+								<input class="btn btn-danger" type="submit" name="edit[delete]" value="<%template_delete>" />
+							</div>
+						 </form>
+					</fieldset>
+				</aside>
+			</article>
+			<!--/edit_area-->
+
+			<!--titlelist_area-->
+			<!--titlelist-->
+			<article class="post" id="e<%titlelist_eno>">
+				<header>
+					<h2><a href="<%titlelist_url>" rel="bookmark" title="<%titlelist_title>"><%titlelist_title></a></h2>
+					<ul class="meta">
+						<li class="date">
+							<time datetime="<%titlelist_year>-<%titlelist_month>-<%titlelist_day>T<%titlelist_hour>:<%titlelist_minute>:<%titlelist_second>+09:00"><%titlelist_year>-<%titlelist_month>-<%titlelist_day></time>
+						</li>
+						<li class="category">
+							<a href="<%titlelist_category_url>"><%titlelist_category></a>
+						</li>
+					</ul>
+				</header>
+				<div class="body">
+					<%titlelist_body>...
+					<div class="continue"><a href="<%titlelist_link>" title="<%titlelist_title>"><%template_extend></a></div>
+				</div>
+				<footer>
+					<ul class="reaction">
+						<!--allow_comment--><li><a href="<%titlelist_link>#cm" title="<%titlelist_comment_num>"><%template_comment></a></li><!--/allow_comment-->
+						<!--allow_tb--><li><a href="<%titlelist_link>#tb" title="<%titlelist_tb_num>"><%template_trackback></a></li><!--/allow_tb-->
+						<li class="pagetop"><a href="#"><%template_go_top></a></li>
+					</ul>
+				</footer>
+			</article>
+			<!--/titlelist-->
+			<!--/titlelist_area-->
+
+			</section>
+
+			<!--not_permanent_area--><nav id="pager" class="pagination" data-total="<%total_pages>" data-current="<%current_page_num>"></nav><!--/not_permanent_area-->
+
+			<!--permanent_area-->
+			<nav id="pager">
+				 <ol class="pager">
+				 <!--preventry--><li class="previous"><a href="<%preventry_url>" title="<%preventry_title>"><%template_preventry></a></li><!--/preventry-->
+				 <!--nextentry--><li class="next"><a href="<%nextentry_url>" title="<%nextentry_title>"><%template_nextentry></a></li><!--/nextentry-->
+				 </ol>
+			</nav>
+			<!--/permanent_area-->
+
+		</div><!-- /#main -->
+
+		<div id="sidebar">
+			<!--plugin-->
+			<section class="first">
+				<!--plugin_first-->
+				<div class="plugin <%plugin_first_tag>">
+					<h3 class="<%plugin_first_talign>"><%plugin_first_title></h3>
+					<div class="<%plugin_first_align>">
+						<!--plugin_first_description--><div class="<%plugin_first_ialign>"><%plugin_first_description></div><!--/plugin_first_description-->
+						<%plugin_first_content>
+						<!--plugin_first_description2--><div class="<%plugin_first_ialign>"><%plugin_first_description2></div><!--/plugin_first_description2-->
+					</div>
+				</div>
+				<!--/plugin_first-->
+			</section>
+			<section class="second">
+				<!--plugin_second-->
+				<div class="plugin <%plugin_second_tag>">
+					<h3 class="<%plugin_second_talign>"><%plugin_second_title></h3>
+					<div class="<%plugin_second_align>">
+						<!--plugin_second_description--><div class="<%plugin_second_ialign>"><%plugin_second_description></div><!--/plugin_second_description-->
+						<%plugin_second_content>
+						<!--plugin_second_description2--><div class="<%plugin_second_ialign>"><%plugin_second_description2></div><!--/plugin_second_description2-->
+					</div>
+				</div>
+				<!--/plugin_second-->
+			</section>
+			<!--/plugin-->
+		</div><!-- /#sidebar -->
+
+	</div>
+
+</div><!-- /#content -->
+
+<footer id="footer">
+	<div class="container">
+		<div class="pagetop"><a href="#" title="<%template_go_top>"><%template_go_top></a></div>
+		<section id="copyright">
+			<p class="fc2_ad"><%ad> <%ad2></p>
+			<p class="copyright">&copy; <%blog_name>. All Rights Reserved. Designed by <a href="http://fc2ist.blog.fc2.com/" rel="external">FC2.blog.hack();</a></p>
+		</section>
+	</div>
+</footer><!-- #footer -->
+
+{{:body_bottom}}
+
+</body>
+</html>
+</xmp>
+
+</body>
+</html>
