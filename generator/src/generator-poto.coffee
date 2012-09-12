@@ -110,7 +110,6 @@ class Generator
 
   _render = (str, obj)->
     for k, v of obj
-      console.log(typeof v)
       if typeof v == 'object'
         for ck, cv of v
           regexp = new RegExp( '{{:' + k + '\.' + ck + '}}', 'g' )
