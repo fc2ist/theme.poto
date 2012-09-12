@@ -1,3 +1,10 @@
+/*!
+ *
+ * User Style Sheet
+ *
+ */
+
+
 // リボン画像の差し替え
 // --------------------------------------------------
 
@@ -36,4 +43,30 @@ body {
   padding-bottom: 30px;
   border-bottom: 2px dotted #dca; /* ラインの場合 */
   background: url(画像のURL) repeat-x left bottom; /* 画像の場合 */
+}
+
+
+// 記事のヘッダーに背景色を付ける
+// --------------------------------------------------
+
+#article > header {
+  padding: 10px;
+  background-color: #5CD0CC;
+  color: white;
+  -webkit-border-radius: 4px;
+  -moz-border-radius   : 4px;
+  -o-border-radius     : 4px;
+  -ms-border-radius    : 4px;
+  border-radius        : 4px;
+}
+
+#article > header a {
+  color: white;
+}
+
+#article > header a:hover {
+  color: ;
+}
+#articles > .post > header ul li {
+  border-right-color: #6FE2DC;
 }
