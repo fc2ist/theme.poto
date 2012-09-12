@@ -161,43 +161,9 @@
 
     _defaults = {
       'color': '#555555',
-      'linkColor': '#f89406',
-      'linkColorHover': '#555555',
-      'backgroundColor': 'white',
-      'sns': {
-        'twitter': {
-          'name': 'Twitter',
-          'url': 'https://twitter.com/{{:id}}'
-        },
-        'facebook': {
-          'name': 'Facebook',
-          'url': 'http://www.facebook.com/{{:id}}'
-        },
-        'google_plus': {
-          'name': 'Google+',
-          'url': 'https://plus.google.com/{{:id}}'
-        },
-        'flickr': {
-          'name': 'Flickr',
-          'url': 'http://www.flickr.com/{{:id}}'
-        },
-        'instagram': {
-          'name': 'Instagram',
-          'url': 'http://web.stagram.com/n/{{:id}}'
-        },
-        'youtube': {
-          'name': 'YouTube',
-          'url': 'http://www.youtube.com/{{:id}}'
-        },
-        'pinterest': {
-          'name': 'Pinterest',
-          'url': 'http://pinterest.com/{{:id}}'
-        },
-        'github': {
-          'name': 'Github',
-          'url': 'https://github.com/{{:id}}'
-        }
-      }
+      'linkColor': '#FF60AD',
+      'linkColorHover': '#55c3b6',
+      'backgroundColor': '#fafaf5'
     };
 
     return Generator;
