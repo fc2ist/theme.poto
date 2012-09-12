@@ -139,7 +139,6 @@
       var ck, cv, k, regexp, v;
       for (k in obj) {
         v = obj[k];
-        console.log(typeof v);
         if (typeof v === 'object') {
           for (ck in v) {
             cv = v[ck];
