@@ -1,0 +1,39 @@
+// リボン画像の差し替え
+// --------------------------------------------------
+
+#header .twitter {
+  width: 画像の横幅; /* 例) 200px */
+  height: 画像の縦幅;
+  background-image: url(画像のURL);
+  background-repeat: no-repeat;
+}
+
+#header .twitter a {
+  display: none;
+}
+
+
+// ストライプの背景を差し替え
+// --------------------------------------------------
+
+body {
+  background-image: url(画像のURL);
+}
+
+
+// 記事のフォントサイズ変更
+// --------------------------------------------------
+
+#articles > .post > .body {
+  font-size: 1.1em; /* 倍率 */
+}
+
+
+// 記事の下にラインor画像 (要らない方は削除してください)
+// --------------------------------------------------
+
+#articles > .post {
+  padding-bottom: 30px;
+  border-bottom: 2px dotted #dca; /* ラインの場合 */
+  background: url(画像のURL) repeat-x left bottom; /* 画像の場合 */
+}
