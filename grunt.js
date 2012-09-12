@@ -19,7 +19,7 @@ module.exports = function(grunt) {
         dest: 'css/theme-poto.css'
       },
       less_min: {
-        src: ['<banner:meta.banner>', '<banner:meta.bootstrap>', 'css/theme-poto.min.css'],
+        src: ['<banner:meta.banner>', '<banner:meta.bootstrap>', 'css/theme-poto-min.css'],
         dest: 'css/theme-poto-min.css'
       },
       js_dist: {

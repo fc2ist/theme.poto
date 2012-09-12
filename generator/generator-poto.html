@@ -1,10 +1,9 @@
-<!-- v0.1.1 -->
 <!DOCTYPE HTML>
 <html>
 <head>
 	<meta charset="UTF-8" />
 	<title>カスタマイズ [poto]</title>
-	<link rel="stylesheet" type="text/css" charset="UTF-8" href="../css/theme.min.css" />
+	<link rel="stylesheet" type="text/css" charset="UTF-8" href="../css/theme-poto-min.css" />
 	<!--[if lt IE 9]><script type="text/javascript" charset="utf-8" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 	<script type="text/javascript" charset="utf-8" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
 	<script type="text/javascript" charset="utf-8" src="http://blog-imgs-56-origin.fc2.com/f/c/2/fc2ist/bootstrap.js"></script>
@@ -240,15 +239,6 @@
 	<!--/permanent_area-->
 </xmp>
 
-<!-- SNS -->
-<xmp id="template-sns" class="hide">
-		<nav>
-			<ul>
-				{{loop}}<li><a class="icon-sns icon-white {{:icon}}" href="{{:url}}" title="{{:name}}">{{:name}}</a></li>{{/loop}}
-			</ul>
-		</nav>
-</xmp>
-
 <!-- ブログタイトルの画像 -->
 <xmp id="template-titleImage" class="hide">
 // Title Image
@@ -407,9 +397,8 @@ a:hover {
 
 	<title><%sub_title><!--tag_area--> | <!--/tag_area--><!--search_area--> | <!--/search_area--><!--category_area--> | <!--/category_area--><!--date_area--> | <!--/date_area--><!--permanent_area--> | <!--/permanent_area--><!--titlelist_area-->Archives | <!--/titlelist_area--><!--edit_area--> | <!--/edit_area--><%blog_name></title>
 
-	<link rel="stylesheet" type="text/css" charset="utf-8" href="http://blog-imgs-56-origin.fc2.com/f/c/2/fc2ist/theme-doti.css" />
+	<link rel="stylesheet" type="text/css" charset="utf-8" href="http://blog-imgs-56-origin.fc2.com/f/c/2/fc2ist/theme-poto-min.css" />
 	<link rel="stylesheet" type="text/css" charset="utf-8" href="<%css_link>" />
-
 	<link rel="alternate" type="application/rss+xml" title="RSS" href="<%url>?xml" />
 	<link rel="archives" href="/archives.html" title="All Archives" />
 	<!--preventry--><link rel="prev" href="<%preventry_url>" title="<%preventry_title>" /><!--/preventry-->
@@ -422,10 +411,10 @@ a:hover {
 	<script type="text/javascript" charset="utf-8" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 
-	<script type="text/javascript" charset="utf-8" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
 	<script type="text/javascript" charset="utf-8" src="http://blog-imgs-56.fc2.com/f/c/2/fc2ist/bootstrap.js"></script>
 	<script type="text/javascript" charset="utf-8" src="http://blog-imgs-56-origin.fc2.com/f/c/2/fc2ist/jquery_fc2_min.js"></script>
-	<script type="text/javascript" charset="utf-8" src="http://blog-imgs-56-origin.fc2.com/f/c/2/fc2ist/theme-doti.js"></script>
+	<script type="text/javascript" charset="utf-8" src="http://blog-imgs-56-origin.fc2.com/f/c/2/fc2ist/theme-poto-min.js"></script>
 
 	{{:plugin.timeline}}
 
@@ -435,338 +424,398 @@ a:hover {
 
 {{:body_top}}
 
-<header id="header">
-	<div class="container">
-		<hgroup>
-			<h1><a href="<%url>"><%blog_name></a></h1>
-			<h2><%introduction></h2>
-		</hgroup>
-		{{:sns}}
-	</div>
-</header><!-- /#header -->
+  <div id="wrapper">
 
-<div id="content">
-	<div class="container">
-		<div id="main">
+  	<header id="header">
+  		<hgroup>
+  			<h1><a href="<%url>"><%blog_name></a></h1>
+  			<h2><%introduction></h2>
+  		</hgroup>
+  		<nav class="navbar navbar-static-top">
+  		  <div class="navbar-inner">
+    		  <ul class="nav">
+    		    <li<!--index_area--> class="active"<!--/index_area-->><a href="/">Home</a></li>
+    		    <li class="dropdown">
+      		    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+      		      Latest Entries
+      		      <b class="caret"></b>
+      		    </a>
+      		    <ul class="dropdown-menu">
+      		      <!--recent-->
+      		      <li>
+      		        <a href="<%recent_link>" title="<%recent_title>"><%recent_title><span class="badge badge-inverse"><%recent_month>-<%recent_day></span></a>
+      		      </li>
+      		      <!--/recent-->
+      		    </ul>
+    		    </li>
+    		    <li class="dropdown<!--category_area--> active<!--/category_area-->">
+      		    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+      		      Categories
+      		      <b class="caret"></b>
+      		    </a>
+      		    <ul class="dropdown-menu">
+      		      <!--category-->
+      		      <!--category_sub_begin--><ul class="dropdown-menu"><!--/category_sub_begin-->
+      		      <!--category_nosub-->
+      		      <li>
+      		      <!--/category_nosub-->
+      		      <!--category_parent-->
+      		      <li class="dropdown-submenu">
+      		      <!--/category_parent-->
+      		      <!--category_sub_hasnext-->
+      		        <li>
+      		      <!--/category_sub_hasnext-->
+      		      <!--category_sub_end-->
+      		        <li>
+      		      <!--/category_sub_end-->
+      		        <a href="<%category_link>" title="<%category_name>"><%category_name><span class="badge badge-inverse"><%category_count></span></a>
+      		      <!--category_nosub-->
+      		      </li>
+      		      <!--/category_nosub-->
+      		      <!--category_sub_hasnext-->
+      		        </li>
+      		      <!--/category_sub_hasnext-->
+      		      <!--category_sub_end-->
+      		          </li>
+      		        </ul>
+      		      </li>
+      		      <!--/category_sub_end-->
+      		      <!--/category-->
+      		    </ul>
+    		    </li>
+    		    <li class="dropdown<!--date_area--> active<!--/date_area-->">
+    		      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+    		        Archives
+    		        <b class="caret"></b>
+    		      </a>
+    		      <ul class="dropdown-menu">
+    		        <!--archive-->
+    		        <li><a href="<%archive_link>" title="<%archive_year>.<%archive_month>"><%archive_year>.<%archive_month><span class="badge badge-inverse"><%archive_count></span></a></li>
+    		        <!--/archive-->
+    		      </ul>
+    		    </li>
+    		  </ul>
+  		  </div>
+  		</nav>
+  		<div class="twitter"><a href="http://twitter.com/{{:sns.twitter}}" title="Follow me">Follow me</a></div>
+  	</header><!-- /#header -->
 
-			<!--date_area-->
-			<h1><%sub_title></h1>
-			<!--/date_area-->
-			<!--category_area-->
-			<h1><%sub_title></h1>
-			<!--/category_area-->
-			<!--search_area-->
-			<h1><%sub_title></h1>
-			<!--/search_area-->
-			<!--tag_area-->
-			<h1><%sub_title></h1>
-			<!--/tag_area-->
-			<!--titlelist_area-->
-			<h1>Archives</h1>
-			<!--/titlelist_area-->
+  	<div id="content">
+
+  		<div id="main">
+
+  			<!--date_area-->
+  			<h1><%sub_title></h1>
+  			<!--/date_area-->
+  			<!--category_area-->
+  			<h1><%sub_title></h1>
+  			<!--/category_area-->
+  			<!--search_area-->
+  			<h1><%sub_title></h1>
+  			<!--/search_area-->
+  			<!--tag_area-->
+  			<h1><%sub_title></h1>
+  			<!--/tag_area-->
+  			<!--titlelist_area-->
+  			<h1>Archives</h1>
+  			<!--/titlelist_area-->
 
 {{:plugin.carousel}}
 
-			<section id="articles">
-			<!--not_titlelist_area-->
-			<!--topentry-->
-			<article class="post" id="e<%topentry_no>">
-				<header>
-					<!--permanent_area--><h1><%topentry_title></h1><!--/permanent_area-->
-					<!--not_permanent_area--><h2><a href="<%topentry_link>" rel="bookmark" title="<%topentry_title>"><%topentry_title></a></h2><!--/not_permanent_area-->
-					<ul class="meta">
-						<li class="date">
-							<time datetime="<%topentry_year>-<%topentry_month>-<%topentry_day>T<%topentry_hour>:<%topentry_minute>:<%topentry_second>+09:00"><%topentry_year>-<%topentry_month>-<%topentry_day></time>
-						</li>
-						<li class="category">
-							<a href="<%topentry_category_link>"><%topentry_category></a>
-						</li>
-						<!--topentry_tag-->
-						<li class="tag">
-							<ul>
-							<!--tag_list-->
-								<li><a href="/?tag=<%topentry_tag_list_parsename>"><%topentry_tag_list_name></a></li>
-							<!--/tag_list-->
-							</ul>
-						</li>
-						<!--/topentry_tag-->
-						<!--community-->
-						<li class="community">
-							<%template_theme>: <a href="<%topentry_thread_link>" title="<%template_genre>:<%topentry_community_janrename>"><%topentry_thread_title></a>
-						</li>
-						<!--/community-->
-					</ul>
-				</header>
-				<div class="body" data-eno="<%topentry_no>" data-title="<%topentry_title>">
-				  {{:post_top}}
-					<%topentry_body>
-					<aside>
-						<!--more_link--><div class="continue"><a href="<%topentry_link>#more" title="<%topentry_title>"><%template_extend></a></div><!--/more_link-->
-					</aside>
-					<!--more-->
-					<div id="more">
-            {{:post_middle}}
-            <%topentry_more>
-					</div>
-					<!--/more-->
-					{{:post_bottom}}
-				</div>
+        <section id="articles">
+  			<!--not_titlelist_area-->
+  			<!--topentry-->
+  			<article class="post" id="e<%topentry_no>">
+  				<header>
+  					<!--permanent_area--><h1><%topentry_title></h1><!--/permanent_area-->
+  					<!--not_permanent_area--><h2><a href="<%topentry_link>" rel="bookmark" title="<%topentry_title>"><%topentry_title></a></h2><!--/not_permanent_area-->
+  					<ul class="meta">
+  						<li class="date">
+  							<time datetime="<%topentry_year>-<%topentry_month>-<%topentry_day>T<%topentry_hour>:<%topentry_minute>:<%topentry_second>+09:00"><%topentry_year>-<%topentry_month>-<%topentry_day></time>
+  						</li>
+  						<li class="category">
+  							<a href="<%topentry_category_link>"><%topentry_category></a>
+  						</li>
+  						<!--topentry_tag-->
+  						<li class="tag">
+  							<ul>
+  							<!--tag_list-->
+  								<li><a href="/?tag=<%topentry_tag_list_parsename>"><%topentry_tag_list_name></a></li>
+  							<!--/tag_list-->
+  							</ul>
+  						</li>
+  						<!--/topentry_tag-->
+  						<!--community-->
+  						<li class="community">
+  							<%template_theme>: <a href="<%topentry_thread_link>" title="<%template_genre>:<%topentry_community_janrename>"><%topentry_thread_title></a>
+  						</li>
+  						<!--/community-->
+  					</ul>
+  				</header>
+  				<div class="body" data-eno="<%topentry_no>" data-title="<%topentry_title>">
+  				  {{:post_top}}
+  					<%topentry_body>
+  					<aside>
+  				    <!--more_link--><div class="continue"><a href="<%topentry_link>#more" title="<%topentry_title>"><%template_extend></a></div><!--/more_link-->
+  				  </aside>
+  					<!--more-->
+  					<div id="more">
+              {{:post_middle}}
+  						<%topentry_more>
+  					</div>
+  					<!--/more-->
+  					{{:post_bottom}}
+  				</div>
 
-				<!--not_permanent_area-->
-				<footer>
-					<ul class="reaction">
-						<!--allow_comment--><li><a href="<%topentry_link>#cm" rel="tooltip" title="<%topentry_comment_num>"><%template_comment></a></li><!--/allow_comment-->
-						<!--allow_tb--><li><a href="<%topentry_link>#tb" rel="tooltip" title="<%topentry_tb_num>"><%template_trackback></a></li><!--/allow_tb-->
-						<li class="pagetop"><a href="#"><%template_go_top></a></li>
-					</ul>
-				</footer>
-				<!--/not_permanent_area-->
+  				<!--not_permanent_area-->
+  				<footer>
+  				  <ul class="reaction">
+              <!--allow_comment--><li><a href="<%topentry_link>#cm" data-num="<%topentry_comment_num>"><%template_comment></a></li><!--/allow_comment-->
+              <!--allow_tb--><li><a href="<%topentry_link>#tb" data-num="<%topentry_tb_num>"><%template_trackback></a></li><!--/allow_tb-->
+              <li class="pagetop"><a href="#header"><%template_go_top></a></li>
+            </ul>
+  				</footer>
+          <!--/not_permanent_area-->
 
-				<!--comment_area-->
-				<aside id="cm">
-					<section class="reaction">
-						 <h2><%template_comment></h2>
-						 <div class="articles">
-							 <!--comment-->
-							 <article id="comment<%comment_no>">
-								 <header>
-									<h3 title="<%comment_name> (<%comment_trip>)"><%comment_url+name><span class="title"><%comment_title></span></h3>
-								 </header>
-								 <div class="body">
-									<%comment_body>
-								 </div>
-								 <footer>
-									<time datetime="<%comment_year>-<%comment_month>-<%comment_day>-<%comment_hour>-<%comment_minute>-<%comment_second>">
-										<%comment_year>.<%comment_month>.<%comment_day> <%comment_hour>:<%comment_minute>
-									</time>
-									<!--comment_edit--><span class="edit"><a href="<%comment_edit_link>" title="<%template_edit_comment>"><%template_edit></a></span><!--/comment_edit-->
-								</footer>
-							 </article>
-							 <!--/comment-->
-						 </div>
-					</section>
-					<fieldset class="action">
-						 <legend><%template_post_comment></legend>
-						 <div class="alert alert-error hide">
-							<button type="button" class="close" data-dismiss="alert">×</button>
-							<strong>Error!</strong> <p><%edit_message></p>
-						 </div>
-						 <form action="./" method="post" class="form-horizontal">
-							<div class="control-group">
-								<label for="cm-name" class="control-label"><%template_name></label>
-								<div class="controls"><input id="cm-name" type="text" class="span5" tabindex="1" name="comment[name]" value="<%cookie_name>" placeholder="<%template_name>" /></div>
-							</div>
-							<div class="control-group">
-								<label for="cm-subject" class="control-label"><%template_title></label>
-								<div class="controls"><input id="cm-subject" type="text" class="span5" tabindex="2" name="comment[title]" value="" placeholder="<%template_title>" /></div>
-							</div>
-							<div class="control-group">
-								<label for="cm-email" class="control-label"><%template_address></label>
-								<div class="controls"><input id="cm-email" type="email" class="span5" tabindex="3" name="comment[mail]" value="<%cookie_mail>" placeholder="<%template_address>" /></div>
-							</div>
-							<div class="control-group">
-								<label for="cm-url" class="control-label">URL</label>
-								<div class="controls"><input id="cm-url" type="url" class="span5" tabindex="4" name="comment[url]" id=""	value="<%cookie_url>" placeholder="http://" /></div>
-							</div>
-							<div class="control-group">
-								<label for="cm-body" class="control-label"><%template_body></label>
-								<div class="controls"><textarea id="cm-body" name="comment[body]" class="span5" tabindex="5" rows="10" placeholder="<%template_body>" required></textarea></div>
-							</div>
-							<div class="control-group">
-								<label for="cm-pw" class="control-label"><%template_password></label>
-								<div class="controls"><input id="cm-pw" type="password" class="span5" tabindex="6" name="comment[pass]" placeholder="<%template_password>" /></div>
-							</div>
-							 <!--accept_secret_comment-->
-							<div class="control-group">
-								<div class="controls">
-									<label for="himitu">
-										<input type="checkbox" id="himitu" name="comment[himitu]" value="1" /> <%template_private_check>
-									</label>
-								</div>
-							</div>
-							<!--/accept_secret_comment-->
-							<div class="form-actions">
-								 <input type="hidden" name="mode" value="regist" />
-								 <input type="hidden" name="comment[no]" value="<%pno>" />
-								 <input type="submit" class="btn btn-primary" tabindex="7" value="<%template_send>" />
-							</div>
-						 </form>
-					</fieldset>
-				</aside>
-				<!--/comment_area-->
-				<!--trackback_area-->
-				<aside id="tb">
-					<section class="reaction">
-						 <h2><%template_trackback></h2>
-						 <div class="articles">
-							 <!--trackback-->
-							 <article id="tb<%tb_no>">
-								 <header>
-									 <h3><a href="<%tb_url>" rel="nofollow"><%tb_title> - <%tb_blog_name></a></h3>
-								 </header>
-								 <div class="body">
-									<%tb_excerpt>
-								 </div>
-								 <footer>
-									<time datetime="<%tb_year>-<%tb_month>-<%tb_day>T<%tb_hour>:<%tb_minute>:<%tb_second>"><%tb_year>.<%tb_month>.<%tb_day> <%tb_hour>:<%tb_minute></time>
-								 </footer>
-							 </article>
-							 <!--/trackback-->
-						 </div>
-					</section>
-					<fieldset class="action">
-						 <legend><%template_trackback>URL</legend>
-						 <p>
-							 <input type="url" value="<%trackback_url>" />
-						 </p>
-					</fieldset>
-				</aside>
-				<!--/trackback_area-->
+  				<!--comment_area-->
+  				<aside id="cm">
+  					<section class="reaction">
+  					  <h2 title="<%template_comment>">Comments</h2>
+  					  <!--comment-->
+  					  <article id="comment<%comment_no>">
+  					    <header>
+                  <h3><%comment_url+name><span class="title"><%comment_title></span></h3>
+  					    </header>
+  					    <div class="body">
+  					     <%comment_body>
+  					    </div>
+  					    <footer>
+  					     <time datetime="<%comment_year>-<%comment_month>-<%comment_day>-<%comment_hour>-<%comment_minute>-<%comment_second>">
+  					       <%comment_year>.<%comment_month>.<%comment_day> <%comment_hour>:<%comment_minute>
+  					     </time>
+                  <!--comment_edit--><span class="edit"><a href="<%comment_edit_link>" title="<%template_edit_comment>"><%template_edit></a></span><!--/comment_edit-->
+  					   </footer>
+  					  </article>
+  					  <!--/comment-->
+  					</section>
+  					<section class="action">
+  				    <div class="wrapper">
+    					  <h2 title="<%template_post_comment>">Post a comment</h2>
+    					  <div class="alert alert-error hide">
+    					   <button type="button" class="close" data-dismiss="alert">×</button>
+    					   <strong>Error!</strong> <p><%edit_message></p>
+    					  </div>
+    					  <form action="./" method="post">
+    					    <p class="form-inline">
+    					      <input id="cm-name" type="text" tabindex="1" name="comment[name]" value="<%cookie_name>" placeholder="<%template_name>" /><label for="cm-name">: <%template_name></label>
+    					    </p>
+    					    <p class="form-inline">
+    					      <input id="cm-subject" type="text" tabindex="2" name="comment[title]" value="" placeholder="<%template_title>" /><label for="cm-subject">: <%template_title></label>
+    					    </p>
+    					    <p class="form-inline">
+    					      <input id="cm-email" type="email" tabindex="3" name="comment[mail]" value="<%cookie_mail>" placeholder="<%template_address>" /><label for="cm-email">: <%template_address></label>
+    					    </p>
+    					    <p class="form-inline">
+    					      <input id="cm-url" type="url" tabindex="4" name="comment[url]" id=""  value="<%cookie_url>" placeholder="URL" /><label for="cm-url">: URL</label>
+    					    </p>
+    					    <p>
+    					      <textarea name="comment[body]" tabindex="5" placeholder="<%template_body>" required></textarea>
+    					    </p>
+    					    <p class="form-inline">
+                    <input id="cm-pw" type="password" tabindex="6" name="comment[pass]" placeholder="<%template_password>" /><label for="cm-pw">: <%template_password></label>
+    					    </p>
+    					    <!--accept_secret_comment-->
+    					    <p class="form-inline">
+    					      <input type="checkbox" id="himitu" name="comment[himitu]" value="1" /><label for="himitu"><%template_private_check></label>
+    					    </p>
+    					    <!--/accept_secret_comment-->
+    					    <p>
+    					      <input type="hidden" name="mode" value="regist" />
+    					      <input type="hidden" name="comment[no]" value="<%pno>" />
+    					      <button class="btn btn-primary" tabindex="7"><%template_send></button>
+    					    </p>
+    					  </form>
+  					  </div>
+  					</section>
+  				</aside>
+  				<!--/comment_area-->
+  				<!--trackback_area-->
+  				<aside id="tb">
+  					<section class="reaction">
+  					  <h2 title="<%template_trackback>">Trackbacks</h2>
+  					  <!--trackback-->
+  					  <article id="tb<%tb_no>">
+  					    <header>
+  					      <h3><a href="<%tb_url>" rel="nofollow"><%tb_title> - <%tb_blog_name></a></h3>
+  					    </header>
+  					    <div class="body">
+  					     <%tb_excerpt>
+  					    </div>
+  					    <footer>
+  					     <time datetime="<%tb_year>-<%tb_month>-<%tb_day>T<%tb_hour>:<%tb_minute>:<%tb_second>"><%tb_year>.<%tb_month>.<%tb_day> <%tb_hour>:<%tb_minute></time>
+  					    </footer>
+  					  </article>
+  					  <!--/trackback-->
+  					</section>
+  					<section class="action">
+  				    <div class="wrapper">
+    					  <h2 title="<%template_trackback> URL">Trackback URL</h2>
+    					  <p>
+    					    <input type="url" value="<%trackback_url>" />
+    					  </p>
+    				  </div>
+  					</section>
+  				</aside>
+  				<!--/trackback_area-->
 
-			</article>
-			<!--/topentry-->
-			<!--/not_titlelist_area-->
+  			</article>
+  			<!--/topentry-->
+  			<!--/not_titlelist_area-->
 
-			<!--edit_area-->
-			<article class="post">
-				<aside id="cm">
-					<fieldset class="action">
-						 <legend><%template_edit_comment></legend>
-						 <div class="alert alert-error hide">
-							<button type="button" class="close" data-dismiss="alert">×</button>
-							<strong>Error!</strong> <p><%edit_message></p>
-						 </div>
-						 <form action="./" method="post" class="form-horizontal">
-							<div class="control-group">
-								<label for="cm-name" class="control-label"><%template_name></label>
-								<div class="controls"><input id="cm-name" type="text" class="span5" tabindex="1" name="edit[name]" value="<%edit_name>" placeholder="<%template_name>" /></div>
-							</div>
-							<div class="control-group">
-								<label for="cm-subject" class="control-label"><%template_title></label>
-								<div class="controls"><input id="cm-subject" type="text" class="span5" tabindex="2" name="edit[title]" value="<%edit_title>" placeholder="<%template_title>" /></div>
-							</div>
-							<div class="control-group">
-								<label for="cm-email" class="control-label"><%template_address></label>
-								<div class="controls"><input id="cm-email" type="email" class="span5" tabindex="3" name="edit[mail]" value="<%edit_mail>" placeholder="<%template_address>" /></div>
-							</div>
-							<div class="control-group">
-								<label for="cm-url" class="control-label">URL</label>
-								<div class="controls"><input id="cm-url" type="url" class="span5" tabindex="4" name="edit[url]" id=""	 value="<%edit_url>" placeholder="http://" /></div>
-							</div>
-							<div class="control-group">
-								<label for="cm-body" class="control-label"><%template_body></label>
-								<div class="controls"><textarea id="cm-body" name="edit[body]" class="span5" rows="10" tabindex="5" placeholder="<%template_body>" required><%edit_body></textarea></div>
-							</div>
-							<div class="control-group">
-								<label for="cm-pw" class="control-label"><%template_password></label>
-								<div class="controls"><input id="cm-pw" type="password" class="span5" tabindex="6" name="edit[pass]" placeholder="<%template_password>" /></div>
-							</div>
-							 <!--accept_secret_comment-->
-							<div class="control-group">
-								<div class="controls">
-									<label for="himitu">
-										<input type="checkbox" id="himitu" name="edit[himitu]" value="1" /> <%template_private_check>
-									</label>
-								</div>
-							</div>
-							<!--/accept_secret_comment-->
-							<div class="form-actions">
-								<input type="hidden" name="mode" value="edit" />
-								<input type="hidden" name="mode2" value="edited" />
-								<input type="hidden" name="edit[rno]" value="<%eno>" />
-								 <input type="submit" class="btn btn-primary" tabindex="7" value="<%template_send>" />
-								<input class="btn btn-danger" type="submit" name="edit[delete]" value="<%template_delete>" />
-							</div>
-						 </form>
-					</fieldset>
-				</aside>
-			</article>
-			<!--/edit_area-->
+				<!--edit_area-->
+				<article class="post">
+  				<aside id="cm">
+  					<section class="action">
+  				    <div class="wrapper">
+    					  <h2 title="<%template_edit_comment>">Edit a comment</h2>
+    					  <div class="alert alert-error hide">
+    					   <button type="button" class="close" data-dismiss="alert">×</button>
+    					   <strong>Error!</strong> <p><%edit_message></p>
+    					  </div>
+    					  <form action="./" method="post">
+    					    <p class="form-inline">
+    					      <input id="cm-name" type="text" tabindex="1" name="edit[name]" value="<%edit_name>" placeholder="<%template_name>" /><label for="cm-name">: <%template_name></label>
+    					    </p>
+    					    <p class="form-inline">
+    					      <input id="cm-subject" type="text" tabindex="2" name="edit[title]" value="<%edit_title>" placeholder="<%template_title>" /><label for="cm-subject">: <%template_title></label>
+    					    </p>
+    					    <p class="form-inline">
+    					      <input id="cm-email" type="email" tabindex="3" name="edit[mail]" value="<%edit_mail>" placeholder="<%template_address>" /><label for="cm-email">: <%template_address></label>
+    					    </p>
+    					    <p class="form-inline">
+    					      <input id="cm-url" type="url" tabindex="4" name="edit[url]" id=""  value="<%edit_url>" placeholder="URL" /><label for="cm-url">: URL</label>
+    					    </p>
+    					    <p>
+    					      <textarea name="edit[body]" tabindex="5" placeholder="<%template_body>" required><%edit_body></textarea>
+    					    </p>
+    					    <p class="form-inline">
+                    <input id="cm-pw" type="password" tabindex="6" name="edit[pass]" placeholder="<%template_password>" /><label for="cm-pw">: <%template_password></label>
+    					    </p>
+    					    <p class="form-inline">
+    					      <input type="checkbox" id="himitu" name="edit[himitu]" value="1" /><label for="himitu"><%template_private_check></label>
+    					    </p>
+    					    <p>
+    								<input type="hidden" name="mode" value="edit" />
+    								<input type="hidden" name="mode2" value="edited" />
+    								<input type="hidden" name="edit[rno]" value="<%eno>" />
+    							  <button class="btn btn-primary" tabindex="7"><%template_send></button>
+    							  <input class="btn btn-danger" type="submit" name="edit[delete]" value="<%template_delete>" />
+    					    </p>
+    					  </form>
+  					  </div>
+  					</section>
+  				</aside>
+				</article>
+				<!--/edit_area-->
 
-			<!--titlelist_area-->
-			<!--titlelist-->
-			<article class="post" id="e<%titlelist_eno>">
-				<header>
-					<h2><a href="<%titlelist_url>" rel="bookmark" title="<%titlelist_title>"><%titlelist_title></a></h2>
-					<ul class="meta">
-						<li class="date">
-							<time datetime="<%titlelist_year>-<%titlelist_month>-<%titlelist_day>T<%titlelist_hour>:<%titlelist_minute>:<%titlelist_second>+09:00"><%titlelist_year>-<%titlelist_month>-<%titlelist_day></time>
-						</li>
-						<li class="category">
-							<a href="<%titlelist_category_url>"><%titlelist_category></a>
-						</li>
-					</ul>
-				</header>
-				<div class="body">
-					<%titlelist_body>...
-					<div class="continue"><a href="<%titlelist_link>" title="<%titlelist_title>"><%template_extend></a></div>
-				</div>
-				<footer>
-					<ul class="reaction">
-						<!--allow_comment--><li><a href="<%titlelist_link>#cm" title="<%titlelist_comment_num>"><%template_comment></a></li><!--/allow_comment-->
-						<!--allow_tb--><li><a href="<%titlelist_link>#tb" title="<%titlelist_tb_num>"><%template_trackback></a></li><!--/allow_tb-->
-						<li class="pagetop"><a href="#"><%template_go_top></a></li>
-					</ul>
-				</footer>
-			</article>
-			<!--/titlelist-->
-			<!--/titlelist_area-->
+  			<!--titlelist_area-->
+  			<!--titlelist-->
+  			<article class="post" id="e<%titlelist_eno>">
+  				<header>
+  					<h2><a href="<%titlelist_url>" rel="bookmark" title="<%titlelist_title>"><%titlelist_title></a></h2>
+  					<ul class="meta">
+  						<li class="date">
+  							<time datetime="<%titlelist_year>-<%titlelist_month>-<%titlelist_day>T<%titlelist_hour>:<%titlelist_minute>:<%titlelist_second>+09:00"><%titlelist_year>-<%titlelist_month>-<%titlelist_day></time>
+  						</li>
+  						<li class="category">
+  							<a href="<%titlelist_category_url>"><%titlelist_category></a>
+  						</li>
+  					</ul>
+  				</header>
+  				<div class="body">
+  					<%titlelist_body>...
+  				  <div class="continue"><a href="<%titlelist_link>" title="<%titlelist_title>"><%template_extend></a></div>
+  				</div>
+  				<footer>
+  				  <ul class="reaction">
+              <!--allow_comment--><li><a href="<%titlelist_link>#cm" data-num="<%titlelist_comment_num>"><%template_comment></a></li><!--/allow_comment-->
+              <!--allow_tb--><li><a href="<%titlelist_link>#tb" data-num="<%titlelist_tb_num>"><%template_trackback></a></li><!--/allow_tb-->
+              <li class="pagetop"><a href="#header"><%template_go_top></a></li>
+            </ul>
+  				</footer>
+  			</article>
+  			<!--/titlelist-->
+  			<!--/titlelist_area-->
 
-			</section>
+  			</section>
 
-			<!--not_permanent_area--><nav id="pager" class="pagination" data-total="<%total_pages>" data-current="<%current_page_num>"></nav><!--/not_permanent_area-->
+        <!--not_permanent_area--><nav id="pager" class="pagination" data-total="<%total_pages>" data-current="<%current_page_num>"></nav><!--/not_permanent_area-->
 
-			<!--permanent_area-->
-			<nav id="pager">
-				 <ol class="pager">
-				 <!--preventry--><li class="previous"><a href="<%preventry_url>" title="<%preventry_title>"><%template_preventry></a></li><!--/preventry-->
-				 <!--nextentry--><li class="next"><a href="<%nextentry_url>" title="<%nextentry_title>"><%template_nextentry></a></li><!--/nextentry-->
-				 </ol>
-			</nav>
-			<!--/permanent_area-->
+        <!--permanent_area-->
+      	<nav id="pager">
+  			  <ol class="pager">
+  			  <!--preventry--><li class="previous"><a href="<%preventry_url>" title="<%preventry_title>"><%template_preventry></a></li><!--/preventry-->
+  			  <!--nextentry--><li class="next"><a href="<%nextentry_url>" title="<%nextentry_title>"><%template_nextentry></a></li><!--/nextentry-->
+  			  </ol>
+  			</nav>
+        <!--/permanent_area-->
 
-		</div><!-- /#main -->
+  		</div><!-- /#main -->
 
-		<div id="sidebar">
-			<!--plugin-->
-			<section class="first">
-				<!--plugin_first-->
-				<div class="plugin <%plugin_first_tag>">
-					<h3 class="<%plugin_first_talign>"><%plugin_first_title></h3>
-					<div class="<%plugin_first_align>">
-						<!--plugin_first_description--><div class="<%plugin_first_ialign>"><%plugin_first_description></div><!--/plugin_first_description-->
-						<%plugin_first_content>
-						<!--plugin_first_description2--><div class="<%plugin_first_ialign>"><%plugin_first_description2></div><!--/plugin_first_description2-->
-					</div>
-				</div>
-				<!--/plugin_first-->
-			</section>
-			<section class="second">
-				<!--plugin_second-->
-				<div class="plugin <%plugin_second_tag>">
-					<h3 class="<%plugin_second_talign>"><%plugin_second_title></h3>
-					<div class="<%plugin_second_align>">
-						<!--plugin_second_description--><div class="<%plugin_second_ialign>"><%plugin_second_description></div><!--/plugin_second_description-->
-						<%plugin_second_content>
-						<!--plugin_second_description2--><div class="<%plugin_second_ialign>"><%plugin_second_description2></div><!--/plugin_second_description2-->
-					</div>
-				</div>
-				<!--/plugin_second-->
-			</section>
-			<!--/plugin-->
-		</div><!-- /#sidebar -->
+  		<div id="sidebar">
+  		  <!--plugin-->
+  			<section class="first">
+  				<!--plugin_first-->
+  				<div class="plugin <%plugin_first_tag>">
+  				  <h3 class="<%plugin_first_talign>"><%plugin_first_title></h3>
+  				  <div class="<%plugin_first_align>">
+  				    <!--plugin_first_description--><div class="<%plugin_first_ialign>"><%plugin_first_description></div><!--/plugin_first_description-->
+  				    <%plugin_first_content>
+  				    <!--plugin_first_description2--><div class="<%plugin_first_ialign>"><%plugin_first_description2></div><!--/plugin_first_description2-->
+  					</div>
+  				</div>
+  				<!--/plugin_first-->
+  		  </section>
+  		  <section class="second">
+  				<!--plugin_second-->
+  				<div class="plugin <%plugin_second_tag>">
+  				  <h3 class="<%plugin_second_talign>"><%plugin_second_title></h3>
+  				  <div class="<%plugin_second_align>">
+  				    <!--plugin_second_description--><div class="<%plugin_second_ialign>"><%plugin_second_description></div><!--/plugin_second_description-->
+  				    <%plugin_second_content>
+  				    <!--plugin_second_description2--><div class="<%plugin_second_ialign>"><%plugin_second_description2></div><!--/plugin_second_description2-->
+  					</div>
+  				</div>
+  				<!--/plugin_second-->
+  		  </section>
+				<!--/plugin-->
+  		</div><!-- /#sidebar -->
 
-	</div>
+  	</div><!-- /#content -->
 
-</div><!-- /#content -->
+</div>
 
 <footer id="footer">
-	<div class="container">
-		<div class="pagetop"><a href="#" title="<%template_go_top>"><%template_go_top></a></div>
-		<section id="copyright">
-			<p class="fc2_ad"><%ad> <%ad2></p>
-			<p class="copyright">&copy; <%blog_name>. All Rights Reserved. Designed by <a href="http://fc2ist.blog.fc2.com/" rel="external">FC2.blog.hack();</a></p>
-		</section>
+  <div class="wrapper">
+    <div class="pagetop"><a href="#header" title="<%template_go_top>"><%template_go_top></a></div>
+    <section class="plugin row-fluid">
+			<!--plugin-->
+			<!--plugin_third-->
+			<div class="plugin <%plugin_third_tag> span4">
+			  <h3 class="<%plugin_third_talign>"><%plugin_third_title></h3>
+			  <div class="<%plugin_third_align>">
+			    <!--plugin_third_description--><div class="<%plugin_third_ialign>"><%plugin_third_description></div><!--/plugin_third_description-->
+			    <%plugin_third_content>
+			    <!--plugin_third_description2--><div class="<%plugin_third_ialign>"><%plugin_third_description2></div><!--/plugin_third_description2-->
+				</div>
+			</div>
+			<!--/plugin_third-->
+			<!--/plugin-->
+    </section>
+    <section id="copyright">
+      <p class="fc2_ad"><%ad> <%ad2></p>
+      <p class="copyright">&copy; <%blog_name>. All Rights Reserved. Designed by <a href="http://fc2ist.blog.fc2.com/">FC2.blog.hack();</a></p>
+    </section>
 	</div>
 </footer><!-- #footer -->
 

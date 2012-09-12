@@ -21,26 +21,17 @@
     };
 
     _generate_sns = function() {
-      var input, list, loopEnd, loopPos, output, template;
-      output = '';
-      input = $('[id^=input-sns]').not('[value=""]');
-      if (input.length < 1) return '';
-      template = $.trim($('#template-sns').text());
-      loopPos = template.indexOf('{{loop}}');
-      loopEnd = template.indexOf('{{/loop}}', loopPos);
-      list = template.substring(loopPos, loopEnd).replace('{{loop}}', '').replace('{{/loop}}', '');
+      var input, output;
+      output = {};
+      input = $('[id^=input-sns]');
       input.each(function() {
         var elem, id, val;
         elem = $(this);
         val = $.trim(elem.val());
         id = elem.attr('id').match(/\[([^\]]+)\]/)[1];
-        return output += _render(list, {
-          'icon': id,
-          'url': _defaults.sns[id].url.replace('{{:id}}', val),
-          'name': _defaults.sns[id].name
-        });
+        return output[id] = val;
       });
-      return template.replace('{{loop}}' + list + '{{/loop}}', output);
+      return output;
     };
 
     _generate_html = function() {
@@ -220,7 +211,7 @@
 
     Cookie.prototype.load = function() {
       var elem, k, params, type, v;
-      params = _deparam($.cookie('generator-doti'));
+      params = _deparam($.cookie('generator-poto'));
       for (k in params) {
         v = params[k];
         elem = $('[id="' + k + '"]');
@@ -241,7 +232,7 @@
     Cookie.prototype.set = function() {
       var params;
       params = _param($('[id^=input]'));
-      return $.cookie('generator-doti', params);
+      return $.cookie('generator-poto', params);
     };
 
     _param = function(elem) {
