@@ -14,7 +14,8 @@
 
 	<style type="text/css">
 	.container {
-	 width: 940px;
+	   width: 940px;
+	   text-align: left;
 	}
 	header {
 	 margin-bottom: 48px;
@@ -131,29 +132,33 @@
         <div class="control-group span4">
           <label for="input-css[linkColor]" class="control-label">リンクの色 :</label>
           <div class="controls">
-            <div class="input-append color" rel="colorpicker" data-color="#f89406">
-              <input type="text" id="input-css[linkColor]" value="" placeholder="#f89406" />
-              <span class="add-on"><i style="background-color: #f89406"></i></span>
+            <div class="input-append color" rel="colorpicker" data-color="#FF60AD">
+              <input type="text" id="input-css[linkColor]" value="" placeholder="#FF60AD" />
+              <span class="add-on"><i style="background-color: #FF60AD"></i></span>
             </div>
           </div>
         </div>
         <div class="control-group span4">
           <label for="input-css[linkColorHover]" class="control-label">カーソル乗せたときのリンクの色 :</label>
           <div class="controls">
-            <div class="input-append color" rel="colorpicker" data-color="#555555">
-              <input type="text" id="input-css[linkColorHover]" value="" placeholder="#555555" />
-              <span class="add-on"><i style="background-color: #555555"></i></span>
+            <div class="input-append color" rel="colorpicker" data-color="#55c3b6">
+              <input type="text" id="input-css[linkColorHover]" value="" placeholder="#55c3b6" />
+              <span class="add-on"><i style="background-color: #55c3b6"></i></span>
             </div>
           </div>
         </div>
         <div class="control-group span4">
           <label for="input-css[backgroundColor]" class="control-label">背景の色 :</label>
           <div class="controls">
-            <div class="input-append color" rel="colorpicker" data-color="#ffffff">
-              <input type="text" id="input-css[backgroundColor]" value="" placeholder="#ffffff" />
-              <span class="add-on"><i style="background-color: #ffffff"></i></span>
+            <div class="input-append color" rel="colorpicker" data-color="#fafaf5">
+              <input type="text" id="input-css[backgroundColor]" value="" placeholder="#fafaf5" />
+              <span class="add-on"><i style="background-color: #fafaf5"></i></span>
             </div>
           </div>
+        </div>
+        <div class="control-group span4">
+          <label for="input-css[backgroundImage]" class="control-label">背景画像 :</label>
+          <div class="controls"><input type="text" id="input-css[backgroundImage]" value="" placeholder="http://blog-imgs-56.fc2.com/f/c/2/fc2ist/poto-bg.gif" /></div>
         </div>
         <div class="control-group span4">
           <label for="input-css[titleImage]" class="control-label">ブログタイトルの画像 :</label>
@@ -229,12 +234,11 @@
 <!-- タイムライン -->
 <xmp id="template-plugin-timeline" class="hide">
 	<!--permanent_area-->
-	<link rel="stylesheet" type="text/css" charset="utf-8" href="http://blog-imgs-56-origin.fc2.com/f/c/2/fc2ist/theme-doti-timeline.css" />
+	<link rel="stylesheet" type="text/css" charset="utf-8" href="http://blog-imgs-56-origin.fc2.com/f/c/2/fc2ist/theme-poto-timeline.css" />
 	<script type="text/javascript" charset="utf-8" src="http://blog-imgs-56.fc2.com/f/c/2/fc2ist/jquery_masonry.js"></script>
-	<script type="text/javascript" charset="utf-8" src="http://blog-imgs-56-origin.fc2.com/f/c/2/fc2ist/theme-doti-timeline.js"></script>
+	<script type="text/javascript" charset="utf-8" src="http://blog-imgs-56-origin.fc2.com/f/c/2/fc2ist/theme-poto-timeline.js"></script>
 	<!--/permanent_area-->
 </xmp>
-
 
 <!-- SNS -->
 <xmp id="template-sns" class="hide">
@@ -280,9 +284,14 @@
 // Layout
 // --------------------------------------------------
 
-.container {
-  width: 740px;
-  padding: 0 10px;
+#header .navbar {
+  width: 620px;
+}
+#header .navbar .navbar-inner {
+  background-image: url(http://blog-imgs-56.fc2.com/f/c/2/fc2ist/poto-menu-mini.gif);
+}
+#wrapper {
+  width: 610px;
 }
 #main {
   float: none;
@@ -291,14 +300,9 @@
 #sidebar {
   float: none;
   width: auto;
-  margin-bottom: 0;
-  padding-left: 0;
-  border-left: none;
-  border-bottom: none;
-  *zoom: 1;
 }
 #sidebar > section {
-  width: 45%;
+  width: 300px;
 }
 #sidebar > .first {
   float: left;
@@ -315,13 +319,8 @@
 #sidebar:after {
   clear: both;
 }
-@media (max-width: 767px) {
-  html {
-    overflow-x: hidden;
-  }
-  .container {
-    width: auto;
-  }
+#footer .wrapper {
+  width: 610px;
 }
 </xmp>
 
@@ -347,158 +346,6 @@ a {
 }
 a:hover {
   color: {{:linkColorHover}};
-}
-
-
-// Header
-// --------------------------------------------------
-
-#header {
-  border-top-color: #555555;
-  border-bottom-color: #eeeeee;
-}
-#header h1 a {
-  color: #000000;
-}
-#header h1 a:hover {
-  color: {{:linkColor}};
-}
-#header h2 {
-  color: #999999;
-}
-#header h2::before {
-  background-color: #999999;
-}
-#header nav a {
-  background-color: #555555;
-}
-#header nav a.twitter:hover {
-  background-color: #00aced;
-}
-#header nav a.facebook:hover {
-  background-color: #3c5b97;
-}
-#header nav a.google_plus:hover {
-  background-color: #f5bd34;
-}
-#header nav a.flickr:hover {
-  background-color: #ff0084;
-}
-#header nav a.instagram:hover {
-  background-color: #fc3755;
-}
-#header nav a.youtube:hover {
-  background-color: #ff3333;
-}
-#header nav a.pinterest:hover {
-  background-color: #c9232d;
-}
-#header nav a.github:hover {
-  background-color: #000000;
-}
-
-
-// Main
-// --------------------------------------------------
-
-#main > h1::after {
-  background-color: #222222;
-}
-
-
-// Articles
-// --------------------------------------------------
-
-#articles > .post {
-  border-bottom-color: #eeeeee;
-}
-#articles > .post > header h1,
-#articles > .post > header h2 {
-  color: #333333;
-}
-#articles > .post > header h1 a,
-#articles > .post > header h2 a {
-  color: {{:linkColorHover}};
-}
-#articles > .post > header h1 a:hover,
-#articles > .post > header h2 a:hover {
-  color: {{:linkColor}};
-}
-#articles > .post > header ul {
-  color: #aaa;
-}
-#articles > .post > header ul > li {
-  border-right-color: #eeeeee;
-}
-#articles > .post > footer ul li {
-  border-right-color: #eeeeee;
-}
-#articles > .post .relate_dl {
-  border-color: #eeeeee;
-}
-#articles > .post .relate_dl dt {
-  border-bottom-color: #eeeeee;
-}
-
-
-// Comment & Trackback
-// --------------------------------------------------
-
-#cm .reaction > h2,
-#tb .reaction > h2 {
-  border-color: #999999;
-}
-#cm .reaction article,
-#tb .reaction article {
-  border-bottom-color: #eeeeee;
-}
-#cm .reaction article footer,
-#tb .reaction article footer {
-  color: #999999;
-}
-
-
-// Sidebar
-// --------------------------------------------------
-
-#sidebar a {
-  color: {{:linkColorHover}};
-}
-#sidebar a:hover {
-  color: {{:linkColor}};
-}
-#sidebar .plugin li a::before {
-  background-color: {{:linkColorHover}};
-}
-#sidebar .plugin li a:hover::before {
-  background-color: {{:linkColor}};
-}
-@media (max-width: 480px) {
-  #sidebar .plugin > h3 {
-    border-color: #eeeeee;
-  }
-}
-
-
-// Footer
-// --------------------------------------------------
-
-#footer {
-  border-top-color: #eeeeee;
-}
-#footer a {
-  color: #888888;
-}
-#footer a:hover {
-  color: {{:linkColor}};
-}
-#footer .pagetop a {
-  background-color: #eeeeee;
-  color: #555555;
-}
-#footer .pagetop a:hover {
-  background-color: {{:linkColor}};
-  color: #ffffff;
 }
 
 

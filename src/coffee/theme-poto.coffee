@@ -1,7 +1,7 @@
 $(->
 
   check2Byte = (str)->
-    for (var i = 0; i < str.length; i++)
+    for i in [i..str.length]
       c = str.charCodeAt(i)
       if !( (c >= 0x0 && c < 0x81) || (c == 0xf8f0) || (c >= 0xff61 && c < 0xffa0) || (c >= 0xf8f1 && c < 0xf8f4))
         return true

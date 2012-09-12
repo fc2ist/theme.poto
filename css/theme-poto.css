@@ -4954,9 +4954,8 @@ html*#wrapper {
   margin-bottom: 50px;
 }
 #sidebar {
-  float: left;
+  float: right;
   width: 300px;
-  margin-left: 50px;
   margin-bottom: 50px;
 }
 #footer {
@@ -5089,12 +5088,14 @@ body {
   position: absolute;
   top: -72px;
   right: 0;
-  background: url(http://blog-imgs-56.fc2.com/f/c/2/fc2ist/poto-ribon.png) no-repeat 0 0;
+  background: url(http://blog-imgs-56-origin.fc2.com/f/c/2/fc2ist/poto-twitter.png) no-repeat 0 0;
   width: 183px;
   height: 143px;
-}
-#header .twitter a {
-  display: none;
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
 }
 #articles {
   margin-bottom: 20px;
