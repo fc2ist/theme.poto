@@ -5199,6 +5199,9 @@ body {
   border: 0;
   background: url(http://blog-imgs-56-origin.fc2.com/f/c/2/fc2ist/poto-twitter.png) no-repeat 0 0;
 }
+#header .twitter a:hover {
+  margin-top: 5px;
+}
 #articles {
   margin-bottom: 20px;
 }
