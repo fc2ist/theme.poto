@@ -42,6 +42,13 @@ module.exports = function(grunt) {
         options: {
           yuicompress: true
         }
+      },
+      plugin: {
+        src: ['src/less/plugin/theme-poto-lettering.less'],
+        dest: 'css/plugin/theme-poto-lettering.css',
+        options: {
+          yuicompress: true
+        }
       }
     },
     coffee: {
@@ -57,7 +64,7 @@ module.exports = function(grunt) {
       }
     },
     watch: {
-      files: ['package.json', 'src/less/*.less', 'src/less/bootstrap/*.less', 'src/coffee/*.coffee'],
+      files: ['package.json', 'src/less/*.less', 'src/less/bootstrap/*.less', 'src/coffee/*.coffee', 'src/less/plugin/*.less'],
       tasks: 'less coffee min concat'
     }
   });

@@ -188,12 +188,18 @@
         </div>
         <div class="control-group span6">
           <div class="controls">
+            <label for="input-plugin[lettering]" class="control-label">
+              <input type="checkbox" id="input-plugin[lettering]" value="1" /> ブログタイトルをカラフルにする
+            </label>
+          </div>
+        </div>
+        <div class="control-group span6">
+          <div class="controls">
             <label for="input-plugin[carousel]" class="control-label">
               <input type="checkbox" id="input-plugin[carousel]" value="1" /> トップページにカルーセルを表示する
             </label>
           </div>
         </div>
-
       </div>
     </fieldset>
 
@@ -237,6 +243,12 @@
 	<script type="text/javascript" charset="utf-8" src="http://blog-imgs-56.fc2.com/f/c/2/fc2ist/jquery_masonry.js"></script>
 	<script type="text/javascript" charset="utf-8" src="http://blog-imgs-56-origin.fc2.com/f/c/2/fc2ist/theme-poto-timeline.js"></script>
 	<!--/permanent_area-->
+</xmp>
+
+<!-- レタリング -->
+<xmp id="template-plugin-lettering" class="hide">
+	<link rel="stylesheet" type="text/css" charset="utf-8" href="http://blog-imgs-56.fc2.com/f/c/2/fc2ist/theme-poto-lettering.css" />
+	<script type="text/javascript" charset="utf-8" src="http://blog-imgs-56.fc2.com/f/c/2/fc2ist/theme-poto-lettering.js"></script>
 </xmp>
 
 <!-- ブログタイトルの画像 -->
@@ -421,6 +433,7 @@ a:hover {
 	<script type="text/javascript" charset="utf-8" src="http://blog-imgs-56-origin.fc2.com/f/c/2/fc2ist/theme-poto-min.js"></script>
 
 	{{:plugin.timeline}}
+	{{:plugin.lettering}}
 
 	{{:head_bottom}}
 </head>
